@@ -35,7 +35,7 @@ const SNSDetailSide = () => (
           </div>
         </div>
         <p className="mt-5 text-[12.5px] leading-[1.9] text-paper/75">
-          ギフト・コメント・いいねに反応する、TikTok LIVE配信者向けの配信演出SaaS。OBSやTikTok Live Studioのブラウザソースで導入できます。
+          ギフト・コメント・いいねに反応する、TikTok LIVE配信者向けの配信演出SaaS。
         </p>
         <div className="mt-5 pt-4 border-t border-paper/15 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
@@ -85,7 +85,7 @@ const LiveSpark = () => {
               <span className="text-gold">リアルタイムな反応を。</span>
             </h2>
             <p className="mt-6 max-w-[640px] text-[14px] leading-[2.1] text-paper/80">
-              TikTok LIVE配信者向けの配信演出SaaS。ギフト・コメント・いいねなどの反応を配信画面上に可視化し、配信者とリスナーのコミュニケーションが自然に盛り上がる体験をつくります。
+              ギフト・コメント・いいねを配信画面に反映する、TikTok LIVE配信者向けSaaSです。
             </p>
 
             <div className="mt-7 inline-flex items-center gap-3 px-4 py-2 border border-gold/40 bg-gold/5">
@@ -171,18 +171,15 @@ const App = () => {
           label={"MAIN\nBUSINESS"}
           num="01 / LiveSpark · TikTok LIVE Creative"
           title="LiveSparkを中核に、TikTok LIVE領域の配信体験を広げる。"
-          lead="DAIZUは、自社SaaS「LiveSpark」の開発・運営を中心に、TikTok LIVE配信者向けのリアルタイム演出、カスタムオーバーレイ、ギフトアニメーション制作を展開しています。"
-          body="配信の現場で求められるのは、ただ見た目がきれいな素材ではなく、視聴者の反応が画面に伝わり、配信者とリスナーのコミュニケーションが自然に盛り上がる体験です。また、DAIZUでは配信事務所運営・ライバー支援にも取り組んでおり、配信者が実際にどのような悩みを持ち、どのような演出や導入支援を必要としているかを、現場目線で把握しています。その知見をLiveSparkの機能改善、カスタムオーバーレイ制作、ギフトアニメーション制作に反映することで、見た目だけではなく、実際の配信で使いやすい体験づくりを行っています。"
+          lead="DAIZUはLiveSparkを中心に、TikTok LIVE配信者向けの演出制作を展開しています。"
+          body="自社SaaSと配信事務所運営の知見をもとに、導入しやすく、実際の配信で使いやすい体験を設計します。"
           bullets={[
-            "配信演出SaaS「LiveSpark」の開発・運営",
-            "ギフト・コメント・いいねに反応するオーバーレイ",
-            "配信者・ライバー事務所向けのカスタム制作",
-            "ギフトアニメーション / スタンプ / SNS素材制作",
-            "OBS / TikTok Live Studioで使いやすい画面設計",
-            "配信現場の声を反映した改善・運用",
-            "配信事務所運営で得た現場知見",
-            "ライバー支援・PC配信導入のサポート",
-            "配信者・事務所・視聴者それぞれの目線を踏まえた設計",
+            "LiveSpark開発・運営",
+            "リアルタイム演出オーバーレイ",
+            "配信者・事務所向けカスタム制作",
+            "ギフトアニメーション / SNS素材",
+            "OBS / TikTok Live Studio導入設計",
+            "配信現場の声を反映した改善",
           ]}
           side={<SNSDetailSide/>}
         />
@@ -191,13 +188,12 @@ const App = () => {
           label={"LIVE\nMANAGEMENT"}
           num="02 / Live Management"
           title="配信事務所運営とライバー支援で、現場の課題を知る。"
-          lead="DAIZUでは、TikTok LIVEを中心とした配信事務所運営・ライバー支援にも取り組んでいます。"
-          body="配信者の活動、視聴者とのコミュニケーション、ギフト導線、配信画面の見せ方、PC配信の導入など、実際の配信現場で得た知見をもとに、LiveSparkやカスタム制作にも反映しています。外部企業・ライバー事務所から見ても導入しやすいよう、配信者・事務所・視聴者それぞれの目線を踏まえて設計します。"
+          lead="配信事務所運営・ライバー支援も行っています。"
+          body="現場で得た課題を、ツール設計や導入支援に反映します。"
           bullets={[
             "配信事務所運営で得た現場知見",
-            "ライバー支援・活動設計",
             "PC配信 / TikTok Live Studio導入整理",
-            "事務所側の導入・管理フロー設計",
+            "事務所側の導入フロー設計",
           ]}
           side={<ManagementDetailSide/>}
         />

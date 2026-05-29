@@ -84,7 +84,7 @@ const UserGrowthChart = () => {
             LiveSpark登録ユーザー・Proユーザー数の推移
           </h3>
           <p className="mt-2 text-[12.5px] leading-[1.8] text-mute max-w-[620px]">
-            2026年4月24日を起点に、登録ユーザー数とProユーザー数の増加を累計で表示。TikTok LIVE配信者を中心に利用が広がっています。
+            4月24日を起点に、登録ユーザーとProユーザーの増加を表示。
           </p>
         </div>
         <div className="grid grid-cols-2 gap-5 text-left md:text-right shrink-0">
@@ -170,7 +170,7 @@ const UserGrowthChart = () => {
       </div>
 
       <p className="mt-3 text-[11px] leading-[1.7] tracking-wide text-mute">
-        ※数値は2026年5月29日時点・自社集計です。Proユーザー推移は、公開指標に合わせた概算推移として表示しています。
+        ※2026年5月29日時点・自社集計。Pro推移は公開指標に合わせた概算です。
       </p>
     </div>
   );
@@ -244,11 +244,11 @@ const Works = () => {
 // ---------- Flow ----------
 const Flow = () => {
   const steps = [
-    { n:"01", icon:<Icon.Hearing width="22" height="22"/>, title:"ヒアリング",   body:"配信環境、導入目的、演出イメージ、現在の課題をお伺いします。" },
-    { n:"02", icon:<Icon.Doc     width="22" height="22"/>, title:"課題整理",     body:"配信者・事務所・視聴者それぞれの目線で、必要な演出や導入方法を整理します。" },
-    { n:"03", icon:<Icon.Bulb    width="22" height="22"/>, title:"企画・ラフ提案", body:"オーバーレイ、アニメーション、導入導線、運用方法などの方向性をご提案します。" },
-    { n:"04", icon:<Icon.Code    width="22" height="22"/>, title:"制作・実装",   body:"LiveSparkや各種制作物に反映し、実際に使える形まで整えます。" },
-    { n:"05", icon:<Icon.Chart   width="22" height="22"/>, title:"運用・改善",   body:"導入後の反応や使い勝手を見ながら、改善・追加提案を行います。" },
+    { n:"01", icon:<Icon.Hearing width="22" height="22"/>, title:"ヒアリング",   body:"配信環境、目的、課題を確認します。" },
+    { n:"02", icon:<Icon.Doc     width="22" height="22"/>, title:"課題整理",     body:"必要な演出や導入方法を整理します。" },
+    { n:"03", icon:<Icon.Bulb    width="22" height="22"/>, title:"企画・ラフ提案", body:"画面演出や運用方法をご提案します。" },
+    { n:"04", icon:<Icon.Code    width="22" height="22"/>, title:"制作・実装",   body:"実際に使える形まで整えます。" },
+    { n:"05", icon:<Icon.Chart   width="22" height="22"/>, title:"運用・改善",   body:"反応を見ながら改善します。" },
   ];
   return (
     <section className="section border-t border-line bg-paper2/40">
@@ -303,8 +303,8 @@ const Company = () => {
             <div className="md:col-span-5">
               <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink mb-6">About DAIZU</h2>
               <div className="text-[13.5px] leading-[2.1] text-ink2/85">
-                <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、配信事務所運営・ライバー支援、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行う会社です。</p>
-                <p className="mt-4">配信者、ライバー事務所、関連企業に向けて、配信現場で実際に使われる演出と、導入しやすい仕組みづくりを支援します。</p>
+                <p>DAIZU合同会社は、TikTok LIVE領域でLiveSparkの開発・運営、カスタム制作、配信事務所運営、AI活用支援を行う会社です。</p>
+                <p className="mt-4">現場で使われる演出と、導入しやすい仕組みづくりを支援します。</p>
               </div>
             </div>
             <div className="md:col-span-7">
@@ -399,9 +399,9 @@ const FinalCTA = () => (
               配信演出・導入相談・<br/>提携のご相談はこちら。
             </h2>
             <p className="mt-5 text-[13.5px] leading-[2] text-ink2/85 max-w-[440px]">
-              LiveSparkの導入相談、カスタムオーバーレイ制作、配信事務所・ライバー支援、ギフトアニメーション制作、ライバー事務所・関連企業様との提携相談まで、お気軽にご相談ください。
+              LiveSpark導入、カスタムオーバーレイ、ギフトアニメーション、事務所・法人提携までご相談ください。
               <br/><br/>
-              企画段階のご相談から、導入方法の整理、制作・運用、契約・請求まわりの事前確認まで柔軟に対応します。
+              企画段階から柔軟に対応します。
             </p>
             <div className="mt-8 inline-flex items-center gap-3 text-[12.5px] text-gold2 tracking-wide">
               <span className="dot-gold"></span>

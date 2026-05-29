@@ -51,7 +51,7 @@ const Hero = () => (
           DAIZU合同会社 &nbsp;—&nbsp; Live Streaming SaaS & Creative Company
         </div>
         <div className="mt-7 mx-auto max-w-[330px] sm:max-w-[700px] text-[14.5px] leading-[2.05] text-ink2/85 wrap-anywhere">
-          DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、配信事務所運営・ライバー支援、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行っています。
+          DAIZUは、TikTok LIVE領域で配信演出SaaS「LiveSpark」を開発・運営し、オーバーレイ制作、配信事務所運営、AI活用支援まで行っています。
         </div>
         <div className="mt-10 mx-auto max-w-[342px] sm:max-w-none flex flex-col sm:flex-row sm:justify-center gap-3">
           <a href="#contact" className="btn-gold w-full sm:w-auto inline-flex items-center justify-center sm:justify-between gap-4 sm:gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
@@ -80,9 +80,8 @@ const About = () => (
               TikTok LIVE領域から、<br/>配信体験を設計する。
             </h2>
             <div className="mt-6 text-[14.5px] leading-[2.1] text-ink2/85">
-              <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信者・ライバー事務所・関連企業に向けた配信演出とクリエイティブ支援を行う会社です。</p>
-              <p className="mt-4">自社SaaS「LiveSpark」の開発・運営を通じて、ギフト・コメント・いいねなどのリアルタイムな反応を、配信画面上の演出として可視化する仕組みを提供しています。</p>
-              <p className="mt-4">また、配信事務所運営・ライバー支援で得た現場知見を活かし、カスタムオーバーレイ、ギフトアニメーション、AIを活用した制作支援、Web・LP制作まで、配信・SNS領域に必要な表現を柔軟にサポートします。</p>
+              <p>DAIZUは、TikTok LIVE領域で配信演出とクリエイティブ支援を行う会社です。</p>
+              <p className="mt-4">自社SaaS「LiveSpark」と配信事務所運営で得た現場知見をもとに、配信者・事務所が使いやすい演出を設計します。</p>
             </div>
           </div>
           <div className="md:col-span-5">
@@ -108,7 +107,7 @@ const ServicesOverview = () => {
       icon: <Icon.Spark width="22" height="22" className="text-ink"/>,
       title: "LiveSpark — 配信演出SaaS",
       lead: "TikTok LIVE配信者向けの自社SaaS。",
-      body: "ギフト・コメント・いいねなどに反応するインタラクティブな配信オーバーレイを提供しています。OBSやTikTok Live Studioのブラウザソースで導入でき、無料プランからProプラン、専用カスタム制作まで対応しています。",
+      body: "ギフト・コメント・いいねに反応する配信オーバーレイを提供。OBSやTikTok Live Studioのブラウザソースで導入できます。",
       tags: ["TikTok LIVE領域", "OBS対応", "リアルタイム演出", "自社SaaS"],
     },
     {
@@ -116,7 +115,7 @@ const ServicesOverview = () => {
       icon: <Icon.Play width="22" height="22" className="text-ink"/>,
       title: "カスタムオーバーレイ / 配信演出制作",
       lead: "配信者・事務所・イベント向けの専用演出。",
-      body: "LiveSparkの開発・運営で培った知見をもとに、ギフト演出、コメント表示、いいね演出、ランキング、目標達成演出など、配信の盛り上がりにつながる画面体験を設計します。",
+      body: "ギフト演出、コメント表示、ランキング、目標達成演出など、配信の盛り上がりにつながる画面体験を制作します。",
       tags: ["カスタムオーバーレイ", "ギフト演出", "コメント演出", "事務所向け"],
     },
     {
@@ -124,7 +123,7 @@ const ServicesOverview = () => {
       icon: <Icon.Hands width="22" height="22" className="text-ink"/>,
       title: "配信事務所運営 / ライバー支援",
       lead: "配信現場で得た知見をプロダクトに反映。",
-      body: "DAIZUでは、TikTok LIVEを中心とした配信事務所運営・ライバー支援にも取り組んでいます。配信者の活動、視聴者とのコミュニケーション、ギフト導線、配信画面の見せ方、PC配信の導入など、実際の配信現場で得た知見をもとに、LiveSparkやカスタム制作にも反映しています。単なるツール提供ではなく、配信者・事務所・視聴者それぞれの目線から配信体験を設計します。",
+      body: "配信事務所運営・ライバー支援で得た現場知見を、LiveSparkやカスタム制作に反映します。",
       tags: ["配信事務所運営", "ライバー支援", "現場知見", "PC配信導入"],
     },
     {
@@ -132,7 +131,7 @@ const ServicesOverview = () => {
       icon: <Icon.Pen width="22" height="22" className="text-ink"/>,
       title: "ギフトアニメーション / SNSクリエイティブ",
       lead: "配信現場で使われるテンポと見え方を設計。",
-      body: "TikTok LIVEやSNSで使われるギフトアニメーション、ショート動画用素材、スタンプ、バナー、キャラクター演出などを制作します。視聴者に伝わりやすく、記憶に残るビジュアルを設計します。",
+      body: "ギフトアニメーション、ショート動画素材、スタンプ、バナーなどを制作します。",
       tags: ["ギフトアニメーション", "スタンプ制作", "SNS投稿画像", "キャラクター活用"],
     },
   ];
@@ -147,7 +146,7 @@ const ServicesOverview = () => {
                 LiveSparkを中核に、配信領域の表現を広げる。
               </h2>
               <div className="mt-5 text-[13.5px] leading-[2] text-mute">
-                TikTok LIVE領域の配信演出SaaSを中心に、カスタム制作、配信事務所運営で得た現場知見、ギフト・SNSクリエイティブまでを整理して提供します。
+                SaaS、カスタム制作、事務所運営の知見、SNSクリエイティブを一体で提供します。
               </div>
               <div className="mt-6 mx-auto w-16 h-px gold-line"></div>
             </div>
@@ -234,8 +233,8 @@ const Naming = () => (
             </div>
           </div>
           <div className="md:col-span-7 text-[14px] leading-[2.2] text-ink2/85">
-            DAIZUという名前は、「大豆は小さくても、何にでもなれる」という想いから生まれました。<br/>
-            大豆は、きな粉にも、納豆にも、醤油にもなる。DAIZUも同じように、ひとつの形にとらわれず、TikTok LIVE領域のSaaS開発、配信演出、配信事務所運営・ライバー支援、カスタムクリエイティブ、AI活用支援、Web制作など、事業に合わせて柔軟に形を変えながら、必要な価値を届けていきます。
+            DAIZUという名前は、「大豆は小さくても、何にでもなれる」という想いから。<br/>
+            SaaS開発、配信演出、事務所運営、AI/Web支援まで、必要に応じて形を変えながら価値を届けます。
           </div>
         </div>
       </div>
@@ -246,10 +245,10 @@ const Naming = () => (
 // ---------- Strengths (DAIZUの強み) ----------
 const Strengths = () => {
   const items = [
-    { icon: <Icon.Play width="22" height="22"/>,  title: "TikTok LIVE領域への理解",      body: "ギフト、コメント、いいね、視聴者参加など、配信現場で求められるリアルタイムな盛り上がりを理解した設計ができます。" },
-    { icon: <Icon.Hands width="22" height="22"/>, title: "配信事務所運営で得た現場知見", body: "ライバー支援や配信事務所運営を通じて、配信者が実際に困るポイントや、事務所側の導入・管理のしやすさを理解しています。" },
-    { icon: <Icon.Code width="22" height="22"/>,  title: "自社SaaS運営による実装力",     body: "LiveSparkの開発・運営を通じて、配信者が実際に使いやすいオーバーレイや管理画面の設計を行っています。" },
-    { icon: <Icon.Speed width="22" height="22"/>, title: "AIを活用したスピード感",       body: "企画、制作、試作、改善を素早く回し、必要な形まで短期間で具体化します。" },
+    { icon: <Icon.Play width="22" height="22"/>,  title: "TikTok LIVE領域への理解",      body: "リアルタイムな盛り上がりを踏まえて設計します。" },
+    { icon: <Icon.Hands width="22" height="22"/>, title: "配信事務所運営で得た現場知見", body: "配信者・事務所側の困りごとを理解しています。" },
+    { icon: <Icon.Code width="22" height="22"/>,  title: "自社SaaS運営による実装力",     body: "使いやすい管理画面と演出を磨いています。" },
+    { icon: <Icon.Speed width="22" height="22"/>, title: "AIを活用したスピード感",       body: "企画から試作、改善まで素早く具体化します。" },
   ];
   return (
     <section className="section border-t border-line">
@@ -286,16 +285,13 @@ const Strengths = () => {
 const Consultation = () => {
   const cases = [
     "所属ライバー向けにLiveSparkを導入したい",
-    "ライバー事務所として配信画面の演出を整えたい",
-    "TikTok LIVEの配信画面をもっと盛り上げたい",
-    "所属ライバー向けのカスタムオーバーレイを作りたい",
+    "配信画面の演出を整えたい",
+    "カスタムオーバーレイを作りたい",
     "ギフトやコメントに反応する演出を作りたい",
     "配信事務所向けの導入フローを相談したい",
-    "配信者向けの企画・イベント演出を相談したい",
-    "配信者の活動を伸ばすための演出や企画を相談したい",
-    "ギフトアニメーションやSNS素材を制作したい",
     "PC配信やTikTok Live Studioの導入を整理したい",
-    "AIを使って制作や運用のスピードを上げたい",
+    "ギフトアニメーションやSNS素材を制作したい",
+    "AIで制作・運用を速くしたい",
     "サービスサイトやLPの見せ方を整えたい",
   ];
   return (
