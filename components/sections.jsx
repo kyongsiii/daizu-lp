@@ -44,8 +44,17 @@ const Hero = () => (
           <span className="dot-gold"></span>
           <span className="label-side leading-[1.8] min-w-0 max-w-[300px] sm:max-w-full wrap-anywhere">TikTok LIVE Creative / LiveSpark SaaS / Custom Overlay</span>
         </div>
-        <h1 className="font-jp-serif font-semibold text-[40px] sm:text-[58px] md:text-[76px] leading-[1.18] tracking-[0.02em] text-ink">
-          ライブ配信の<span className="sm:hidden"><br/></span>現場を、<br/>もっと動かす。
+        <h1 className="font-jp-serif font-semibold text-[34px] sm:text-[48px] md:text-[64px] leading-[1.22] tracking-[0.02em] text-ink">
+          <span className="hidden sm:inline">
+            リアルタイム・<br/>
+            エンターテインメントを、<br/>
+            プロダクトで支える。
+          </span>
+          <span className="sm:hidden">
+            リアルタイム・<br/>
+            エンターテインメントを<br/>
+            プロダクトで支える。
+          </span>
         </h1>
         <div className="mt-5 mx-auto max-w-[310px] sm:max-w-none font-jp-serif text-[15px] md:text-[17px] tracking-[0.05em] text-gold2 wrap-anywhere">
           DAIZU合同会社 &nbsp;—&nbsp; Live Streaming SaaS & Creative Company
