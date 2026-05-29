@@ -27,6 +27,132 @@ const WorksPlaceholder = ({tone, title}) => {
   );
 };
 
+const userGrowthData = [
+  { period: "3/31", users: 4 },
+  { period: "4/20", users: 4 },
+  { period: "4/25", users: 15 },
+  { period: "4/30", users: 68 },
+  { period: "5/7", users: 224 },
+  { period: "5/14", users: 394 },
+  { period: "5/21", users: 544 },
+  { period: "5/29", users: 750 },
+];
+
+const UserGrowthChart = () => {
+  const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 640);
+
+  React.useEffect(() => {
+    const media = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsCompact(media.matches);
+    update();
+    if (media.addEventListener) {
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }
+    media.addListener(update);
+    return () => media.removeListener(update);
+  }, []);
+
+  const chartData = isCompact
+    ? userGrowthData.filter((_, i) => [0, 2, 3, 4, 6, 7].includes(i))
+    : userGrowthData;
+  const width = isCompact ? 360 : 760;
+  const height = isCompact ? 250 : 280;
+  const pad = isCompact
+    ? { top: 24, right: 18, bottom: 42, left: 42 }
+    : { top: 24, right: 30, bottom: 46, left: 54 };
+  const maxUsers = 800;
+  const plotW = width - pad.left - pad.right;
+  const plotH = height - pad.top - pad.bottom;
+  const baseY = pad.top + plotH;
+  const points = chartData.map((d, i) => ({
+    ...d,
+    x: pad.left + (plotW * i) / (chartData.length - 1),
+    y: baseY - (d.users / maxUsers) * plotH,
+  }));
+  const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+  const areaPath = `${linePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`;
+  const yTicks = [0, 200, 400, 600, 800];
+
+  return (
+    <div className="mb-14 border border-line bg-paper p-5 md:p-7">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-6">
+        <div>
+          <div className="label-side mb-2">USER GROWTH</div>
+          <h3 className="font-jp-serif font-semibold text-[20px] md:text-[24px] leading-[1.45] text-ink">
+            LiveSpark登録ユーザー数の推移
+          </h3>
+          <p className="mt-2 text-[12.5px] leading-[1.8] text-mute max-w-[620px]">
+            2026年3月末から5月末までの登録ユーザー数を累計で集計。TikTok LIVE配信者を中心に利用が広がっています。
+          </p>
+        </div>
+        <div className="text-left md:text-right shrink-0">
+          <div className="font-jp-serif font-semibold text-[34px] md:text-[42px] leading-none text-ink">
+            750<span className="text-[18px] md:text-[22px] text-gold">+</span>
+          </div>
+          <div className="mt-1 text-[11px] tracking-[0.14em] text-gold2">REGISTERED USERS</div>
+        </div>
+      </div>
+
+      <div>
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          role="img"
+          aria-label="LiveSpark登録ユーザー数の推移グラフ。横軸は時期、縦軸は人数。"
+          className="w-full h-auto"
+        >
+          <defs>
+            <linearGradient id="userGrowthFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="#C5A35D" stopOpacity="0.24" />
+              <stop offset="100%" stopColor="#C5A35D" stopOpacity="0.02" />
+            </linearGradient>
+          </defs>
+
+          <line x1={pad.left} y1={baseY} x2={width - pad.right} y2={baseY} stroke="#D8D0C2" strokeWidth="1" />
+          <line x1={pad.left} y1={pad.top} x2={pad.left} y2={baseY} stroke="#D8D0C2" strokeWidth="1" />
+
+          {yTicks.map((tick) => {
+            const y = baseY - (tick / maxUsers) * plotH;
+            return (
+              <g key={tick}>
+                <line x1={pad.left} y1={y} x2={width - pad.right} y2={y} stroke="#E7E0D4" strokeWidth="1" strokeDasharray={tick === 0 ? "0" : "4 7"} />
+                <text x={pad.left - 12} y={y + 4} textAnchor="end" className="fill-mute" fontSize="11">{tick}</text>
+              </g>
+            );
+          })}
+
+          <path d={areaPath} fill="url(#userGrowthFill)" />
+          <path d={linePath} fill="none" stroke="#9D7A32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+
+          {points.map((p, i) => {
+            const isLast = i === points.length - 1;
+            return (
+              <g key={p.period}>
+                <line x1={p.x} y1={baseY} x2={p.x} y2={baseY + 5} stroke="#B8AA91" strokeWidth="1" />
+                <text x={p.x} y={baseY + 23} textAnchor="middle" className="fill-mute" fontSize="11">{p.period}</text>
+                <circle cx={p.x} cy={p.y} r={isLast ? 5 : 4} fill={isLast ? "#0E0E10" : "#FBFAF7"} stroke="#9D7A32" strokeWidth="2" />
+                {isLast && (
+                  <g>
+                    <rect x={p.x - 31} y={p.y - 35} width="62" height="22" fill="#0E0E10" rx="11" />
+                    <text x={p.x} y={p.y - 20} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">750+</text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+
+          <text x={pad.left} y={height - 5} className="fill-mute" fontSize="11">時期</text>
+          <text x="0" y="12" className="fill-mute" fontSize="11">人数</text>
+        </svg>
+      </div>
+
+      <p className="mt-3 text-[11px] leading-[1.7] tracking-wide text-mute">
+        ※数値は2026年5月29日時点・自社集計です。個人情報は含めず、登録日時のみを集計しています。
+      </p>
+    </div>
+  );
+};
+
 const Works = () => {
   const data = JSON.parse(document.getElementById('works-data').textContent);
   return (
@@ -64,6 +190,8 @@ const Works = () => {
             <p className="-mt-8 mb-12 text-[11px] leading-[1.8] tracking-wide text-mute">
               ※数値は2026年5月時点・自社集計です。
             </p>
+
+            <UserGrowthChart />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {data.map((w, i) => (
