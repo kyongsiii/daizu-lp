@@ -38,42 +38,31 @@ const Header = () => {
 // ---------- Hero ----------
 const Hero = () => (
   <section id="top" className="relative pt-[120px] md:pt-[140px] pb-20 md:pb-28 overflow-hidden">
-    <div className="container-x grid md:grid-cols-12 gap-10 md:gap-12 items-center md:min-h-[560px]">
-      <div className="md:col-span-7 relative min-w-0">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-8">
+    <div className="container-x flex items-center justify-center md:min-h-[560px]">
+      <div className="relative mx-auto w-full max-w-[920px] text-center min-w-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-8">
           <span className="dot-gold"></span>
-          <span className="label-side leading-[1.8] min-w-0 max-w-full wrap-anywhere">TikTok LIVE Creative / LiveSpark SaaS / Custom Overlay</span>
+          <span className="label-side leading-[1.8] min-w-0 max-w-[300px] sm:max-w-full wrap-anywhere">TikTok LIVE Creative / LiveSpark SaaS / Custom Overlay</span>
         </div>
-        <h1 className="font-jp-serif font-semibold text-[44px] sm:text-[58px] md:text-[72px] leading-[1.15] tracking-[0.02em] text-ink">
-          ライブ配信の現場を、<br/>もっと動かす。
+        <h1 className="font-jp-serif font-semibold text-[40px] sm:text-[58px] md:text-[76px] leading-[1.18] tracking-[0.02em] text-ink">
+          ライブ配信の<span className="sm:hidden"><br/></span>現場を、<br/>もっと動かす。
         </h1>
-        <div className="mt-5 font-jp-serif text-[15px] md:text-[17px] tracking-[0.05em] text-gold2">
+        <div className="mt-5 mx-auto max-w-[310px] sm:max-w-none font-jp-serif text-[15px] md:text-[17px] tracking-[0.05em] text-gold2 wrap-anywhere">
           DAIZU合同会社 &nbsp;—&nbsp; Live Streaming SaaS & Creative Company
         </div>
-        <div className="mt-6 max-w-[560px] text-[14.5px] leading-[2] text-ink2/85">
+        <div className="mt-7 mx-auto max-w-[330px] sm:max-w-[700px] text-[14.5px] leading-[2.05] text-ink2/85 wrap-anywhere">
           DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、配信事務所運営・ライバー支援、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行っています。
         </div>
-        <div className="mt-10 flex flex-col sm:flex-row gap-3">
-          <a href="#contact" className="btn-gold inline-flex items-center justify-between gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
+        <div className="mt-10 mx-auto max-w-[342px] sm:max-w-none flex flex-col sm:flex-row sm:justify-center gap-3">
+          <a href="#contact" className="btn-gold w-full sm:w-auto inline-flex items-center justify-center sm:justify-between gap-4 sm:gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
             <span>法人・事務所向けに相談する</span>
             <Icon.ArrowRight width="18" height="18" className="arrow-right"/>
           </a>
-          <a href="#services" className="btn-ghost inline-flex items-center justify-between gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
+          <a href="#services" className="btn-ghost w-full sm:w-auto inline-flex items-center justify-center sm:justify-between gap-4 sm:gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
             <span>サービスを見る</span>
             <Icon.ArrowRight width="18" height="18" className="arrow-right"/>
           </a>
         </div>
-      </div>
-      <div className="md:col-span-5 relative flex items-center justify-center">
-        {/* soft gold halo behind logo */}
-        <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[78%] aspect-square rounded-full"
-               style={{background: "radial-gradient(circle, rgba(184,149,86,0.14), rgba(184,149,86,0) 65%)"}}></div>
-        </div>
-        <img src="assets/hero-logo-3d.webp" alt="DAIZUの3Dロゴ" fetchpriority="high"
-             className="relative w-full max-w-[440px] h-auto select-none"
-             style={{filter: "drop-shadow(0 24px 40px rgba(14,14,16,0.18)) drop-shadow(0 8px 14px rgba(14,14,16,0.10))"}}
-             draggable="false" />
       </div>
     </div>
   </section>
