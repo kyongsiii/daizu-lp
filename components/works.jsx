@@ -43,14 +43,15 @@ const Works = () => {
             </div>
 
             {/* numbers bar */}
-            <div className="border-y border-line py-7 mb-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="border-y border-line py-7 mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {[
-                { num: "300", suffix: "+", label: "オーバーレイSaaSユーザー", sub: "LiveSpark 累計利用者数", highlight: true },
-                { num: "100", suffix: "+", label: "有料サブスク登録",         sub: "月額プラン契約者数",     highlight: true },
-                { num: "40",  suffix: "+", label: "制作実績",                 sub: "SNS・配信・スタンプ他" },
-                { num: "2",   suffix: "年", label: "配信事務所運営",           sub: "現場で培った演出知見" },
+                { num: "550", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
+                { num: "180", suffix: "+", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
+                { num: "40",  suffix: "+", label: "制作実績",               sub: "オーバーレイ・ギフトアニメーション・SNS素材など" },
+                { num: "2",   suffix: "年", label: "配信事務所運営",         sub: "現場で培った配信・演出知見" },
+                { num: "3",   suffix: "",  label: "運用中アカウント",       sub: "SNS / 配信ノウハウを蓄積" },
               ].map((s, i) => (
-                <div key={i} className={`flex flex-col ${s.highlight ? "lg:pr-8 lg:border-r lg:border-line" : ""}`}>
+                <div key={i} className={`flex flex-col ${i < 2 ? "lg:pr-8 lg:border-r lg:border-line" : ""}`}>
                   <div className="flex items-baseline gap-1">
                     <span className={`font-jp-serif font-semibold text-[36px] md:text-[52px] leading-none tabular-nums ${s.highlight ? "text-ink" : "text-ink"}`}>{s.num}</span>
                     <span className={`font-jp-serif text-[18px] md:text-[22px] ${s.highlight ? "text-gold" : "text-gold2"}`}>{s.suffix}</span>
@@ -89,11 +90,11 @@ const Works = () => {
 // ---------- Flow ----------
 const Flow = () => {
   const steps = [
-    { n:"01", icon:<Icon.Hearing width="22" height="22"/>, title:"ヒアリング",   body:"ご相談内容や状況を丁寧にお伺いします。" },
-    { n:"02", icon:<Icon.Doc     width="22" height="22"/>, title:"課題整理",     body:"課題や優先順位を整理し、進め方の方針を共有します。" },
-    { n:"03", icon:<Icon.Bulb    width="22" height="22"/>, title:"企画・ラフ提案", body:"アイデアや構成案をご提案します。" },
-    { n:"04", icon:<Icon.Code    width="22" height="22"/>, title:"制作・実装",   body:"設計に基づき、丁寧に形にしていきます。" },
-    { n:"05", icon:<Icon.Chart   width="22" height="22"/>, title:"運用・改善",   body:"運用後もデータを見ながら改善・最適化をサポート。" },
+    { n:"01", icon:<Icon.Hearing width="22" height="22"/>, title:"ヒアリング",   body:"配信環境、導入目的、演出イメージ、現在の課題をお伺いします。" },
+    { n:"02", icon:<Icon.Doc     width="22" height="22"/>, title:"課題整理",     body:"配信者・事務所・視聴者それぞれの目線で、必要な演出や導入方法を整理します。" },
+    { n:"03", icon:<Icon.Bulb    width="22" height="22"/>, title:"企画・ラフ提案", body:"オーバーレイ、アニメーション、導入導線、運用方法などの方向性をご提案します。" },
+    { n:"04", icon:<Icon.Code    width="22" height="22"/>, title:"制作・実装",   body:"LiveSparkや各種制作物に反映し、実際に使える形まで整えます。" },
+    { n:"05", icon:<Icon.Chart   width="22" height="22"/>, title:"運用・改善",   body:"導入後の反応や使い勝手を見ながら、改善・追加提案を行います。" },
   ];
   return (
     <section className="section border-t border-line bg-paper2/40">
@@ -134,7 +135,7 @@ const Company = () => {
     ["会社名", "DAIZU合同会社"],
     ["代表",   "佐々木 響介"],
     ["所在地", "〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング619"],
-    ["事業内容","SNS制作クリエイティブ / AI活用支援 / Web制作 / キャラクター企画制作"],
+    ["事業内容","配信演出SaaS「LiveSpark」の開発・運営\nTikTok LIVE向けカスタムオーバーレイ制作\nギフトアニメーション / SNSクリエイティブ制作\nAI活用支援 / Web・LP制作"],
     ["Mail",   "sasaki@daizuinc.jp"],
     ["TEL",    "090-7673-0307"],
   ];
@@ -146,16 +147,17 @@ const Company = () => {
           <div className="grid md:grid-cols-12 gap-10">
             <div className="md:col-span-5">
               <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink mb-6">About DAIZU</h2>
-              <p className="text-[13.5px] leading-[2.1] text-ink2/85">
-                DAIZU合同会社は、SNS・ライブ配信クリエイティブを主軸に、AI活用支援、Web制作、キャラクター活用までを行うクリエイティブカンパニーです。中小企業のブランドの「伝える」「広げる」「変わる」を支援します。
-              </p>
+              <div className="text-[13.5px] leading-[2.1] text-ink2/85">
+                <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行う会社です。</p>
+                <p className="mt-4">配信者、ライバー事務所、関連企業に向けて、配信現場で実際に使われる演出と、導入しやすい仕組みづくりを支援します。</p>
+              </div>
             </div>
             <div className="md:col-span-7">
               <dl className="border-t border-line">
                 {rows.map(([k,v]) => (
                   <div key={k} className="grid grid-cols-[110px_1fr] md:grid-cols-[140px_1fr] gap-4 py-4 border-b border-line">
                     <dt className="text-[12px] tracking-[0.14em] text-gold2 pt-1">{k}</dt>
-                    <dd className="text-[13.5px] leading-[1.85] text-ink2/90">{v}</dd>
+                    <dd className="text-[13.5px] leading-[1.85] text-ink2/90 whitespace-pre-line">{v}</dd>
                   </div>
                 ))}
               </dl>
@@ -169,7 +171,7 @@ const Company = () => {
 
 // ---------- Final CTA ----------
 const ContactForm = () => {
-  const [state, setState] = React.useState({ name:"", company:"", email:"", category:"SNS・ライブ配信クリエイティブ", message:"" });
+  const [state, setState] = React.useState({ name:"", company:"", email:"", category:"LiveSpark導入相談", message:"" });
   const [sent, setSent] = React.useState(false);
   const update = (k) => (e) => setState({ ...state, [k]: e.target.value });
 
@@ -206,11 +208,13 @@ const ContactForm = () => {
       <div className="sm:col-span-2">
         <label className={labelCls}>ご相談カテゴリ</label>
         <select value={state.category} onChange={update('category')} className={inputCls + " appearance-none bg-paper"}>
-          <option>SNS・ライブ配信クリエイティブ</option>
-          <option>AI活用支援 / DX相談</option>
-          <option>Web制作 / LP制作</option>
-          <option>キャラクター企画</option>
-          <option>その他 / 全般のご相談</option>
+          <option>LiveSpark導入相談</option>
+          <option>カスタムオーバーレイ制作</option>
+          <option>ギフトアニメーション制作</option>
+          <option>ライバー事務所・法人提携</option>
+          <option>AI活用支援</option>
+          <option>Web・LP制作</option>
+          <option>その他</option>
         </select>
       </div>
       <div className="sm:col-span-2">
@@ -218,7 +222,7 @@ const ContactForm = () => {
         <textarea required rows="4" value={state.message} onChange={update('message')} className={inputCls + " resize-none"} placeholder="現在のお悩みや、お問い合わせ内容をご記入ください。"></textarea>
       </div>
       <div className="sm:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-2">
-        <span className="text-[11.5px] tracking-wide text-mute">送信ボタンでメーラーが起動します。直接送信される方は <a href="mailto:sasaki@daizuinc.jp" className="text-gold2 underline">sasaki@daizu.inc.jp</a></span>
+        <span className="text-[11.5px] tracking-wide text-mute">送信ボタンでメーラーが起動します。直接送信される方は <a href="mailto:sasaki@daizuinc.jp" className="text-gold2 underline">sasaki@daizuinc.jp</a></span>
         <button type="submit" className="btn-gold inline-flex items-center justify-between gap-8 px-7 py-4 text-[13px] tracking-[0.16em]">
           <span>{sent ? "送信しました" : "内容を送信する"}</span>
           <Icon.ArrowRight width="18" height="18" className="arrow-right"/>
@@ -236,14 +240,16 @@ const FinalCTA = () => (
         <div className="grid md:grid-cols-12 gap-10 md:gap-14">
           <div className="md:col-span-5">
             <h2 className="font-jp-serif font-semibold text-[30px] md:text-[42px] leading-[1.4] text-ink">
-              まずは、お気軽に<br/>ご相談ください。
+              配信演出・導入相談・<br/>提携のご相談はこちら。
             </h2>
             <p className="mt-5 text-[13.5px] leading-[2] text-ink2/85 max-w-[440px]">
-              企画段階のご相談から、SNS・ライブ配信クリエイティブ、AI活用、Web制作、キャラクター活用まで、事業に合わせて柔軟にご提案します。
+              LiveSparkの導入相談、カスタムオーバーレイ制作、ギフトアニメーション制作、ライバー事務所・関連企業様との提携相談まで、お気軽にご相談ください。
+              <br/><br/>
+              企画段階のご相談から、導入方法の整理、制作・運用まで柔軟に対応します。
             </p>
             <div className="mt-8 inline-flex items-center gap-3 text-[12.5px] text-gold2 tracking-wide">
               <span className="dot-gold"></span>
-              <span>初回30分の無料相談から始められます</span>
+              <span>配信者・事務所・法人向けの相談に対応します</span>
             </div>
           </div>
           <div className="md:col-span-7">
@@ -264,7 +270,7 @@ const Footer = () => (
         <span className="font-jp-serif font-semibold tracking-[0.2em] text-[13px]">DAIZU, LLC</span>
       </div>
       <div className="font-mono text-[10.5px] tracking-[0.2em] text-mute">
-        Creative Direction / DX Support / Web Production
+        TikTok LIVE SaaS / Custom Overlay / Creative Support
       </div>
       <div className="font-mono text-[10.5px] tracking-[0.18em] text-mute2">
         © 2026 DAIZU合同会社

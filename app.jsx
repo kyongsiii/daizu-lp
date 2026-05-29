@@ -3,8 +3,6 @@ const { Hero, About, ServicesOverview, ServiceDetail, Naming, Strengths,
         Consultation, Works, Flow, Company, FinalCTA, Footer, Header,
         Icon, WorksPlaceholder } = window;
 
-// LiveSpark is defined in this file below; ensure it's accessible
-
 // Decorative side panels for service detail sections
 const SNSDetailSide = () => (
   <div className="relative">
@@ -14,7 +12,7 @@ const SNSDetailSide = () => (
       </div>
     </div>
 
-    {/* LiveSpark product callout — placed within SNS Creative as a flagship overlay product */}
+    {/* LiveSpark product callout — placed within the core business detail. */}
     <a href="https://livespark.jp/" target="_blank" rel="noopener"
        className="group block bg-ink text-paper border border-ink relative overflow-hidden hover:border-gold transition-colors">
       <div aria-hidden="true" className="absolute -top-20 -right-20 w-[260px] h-[260px] rounded-full pointer-events-none opacity-70"
@@ -28,7 +26,7 @@ const SNSDetailSide = () => (
         </div>
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 shrink-0 bg-black border border-paper/15 overflow-hidden flex items-center justify-center">
-            <img src="assets/livespark-logo.jpeg" alt="LiveSpark"
+            <img src="assets/livespark-logo.jpeg" alt="LiveSparkのロゴ"
                  className="w-full h-full object-cover" />
           </div>
           <div className="min-w-0 flex-1">
@@ -37,11 +35,11 @@ const SNSDetailSide = () => (
           </div>
         </div>
         <p className="mt-5 text-[12.5px] leading-[1.9] text-paper/75">
-          OBSのブラウザソースで使える、TikTok LIVE向けオーバーレイサービス。無料プランから月額使い放題、専用カスタムまで。
+          ギフト・コメント・いいねに反応する、TikTok LIVE配信者向けの配信演出SaaS。OBSやTikTok Live Studioのブラウザソースで導入できます。
         </p>
         <div className="mt-5 pt-4 border-t border-paper/15 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-          <span className="font-mono text-[10px] tracking-[0.22em] text-gold/85">livespark.jp · CLOSED BETA</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] text-gold/85">livespark.jp · 550+ USERS</span>
         </div>
       </div>
     </a>
@@ -50,13 +48,13 @@ const SNSDetailSide = () => (
 
 const AIDetailSide = () => (
   <div className="border border-line overflow-hidden bg-paper">
-    <img src="assets/service-ai.webp" alt="" loading="lazy" className="w-full h-auto block" />
+    <img src="assets/service-ai.webp" alt="AI活用支援のイメージ" loading="lazy" className="w-full h-auto block" />
   </div>
 );
 
 const WebDetailSide = () => (
   <div className="border border-line overflow-hidden bg-paper">
-    <img src="assets/service-web.webp" alt="" loading="lazy" className="w-full h-auto block" />
+    <img src="assets/service-web.webp" alt="Web・LP制作のイメージ" loading="lazy" className="w-full h-auto block" />
   </div>
 );
 
@@ -64,13 +62,13 @@ const WebDetailSide = () => (
 const LiveSpark = () => {
   const plans = [
     { name: "FREE",     price: "¥0",        priceSub: "",           desc: "基本オーバーレイが無料で使えます。まずはここから。" },
-    { name: "PRO",      price: "¥1,480",    priceSub: "/ 月",       desc: "全オーバーレイ使い放題。配信をもっと華やかに。", featured: true },
-    { name: "CUSTOM",   price: "要相談",     priceSub: "",           desc: "あなた専用のオーバーレイを1からデザイン・開発。" },
+    { name: "PRO",      price: "¥1,480",    priceSub: "/ 月",       desc: "全オーバーレイ使い放題。配信画面を継続的に演出。", featured: true },
+    { name: "CUSTOM",   price: "要相談",     priceSub: "",           desc: "事務所・配信者向けの専用オーバーレイを制作。" },
   ];
   const steps = [
-    { n: "01", title: "オーバーレイを選ぶ",   body: "ギフト・コメント・カウンター等から、使いたいオーバーレイを選択。" },
-    { n: "02", title: "URLをコピー",         body: "プレビュー下のURLをワンクリックでコピー。" },
-    { n: "03", title: "OBSに追加",           body: "OBSのブラウザソースに貼り付けて、配信に反映。" },
+    { n: "01", title: "演出を選ぶ",       body: "ギフト・コメント・いいねなど、配信に合わせたオーバーレイを選択。" },
+    { n: "02", title: "URLをコピー",      body: "ブラウザソース用URLをコピーし、配信ソフトへ追加。" },
+    { n: "03", title: "配信に反映",       body: "OBSやTikTok Live Studioで、リアルタイムな画面演出として利用できます。" },
   ];
   return (
     <section id="livespark" className="section border-t border-line bg-ink text-paper relative overflow-hidden">
@@ -86,19 +84,19 @@ const LiveSpark = () => {
           <div className="md:col-span-9">
             <div className="flex items-center gap-3 mb-5">
               <Icon.Spark width="24" height="24" className="text-gold"/>
-              <span className="font-mono text-[11px] tracking-[0.22em] text-gold">02 / LIVESPARK · TIKTOK LIVE OVERLAY SAAS</span>
+              <span className="font-mono text-[11px] tracking-[0.22em] text-gold">CORE PRODUCT · LIVESPARK</span>
             </div>
             <h2 className="font-jp-serif font-semibold text-[34px] md:text-[52px] leading-[1.25] tracking-[0.01em]">
-              配信に、火花を。<br/>
-              <span className="text-gold">LiveSpark</span>
+              LiveSparkで、配信画面に<br/>
+              <span className="text-gold">リアルタイムな反応を。</span>
             </h2>
             <p className="mt-6 max-w-[640px] text-[14px] leading-[2.1] text-paper/80">
-              TikTok LIVE配信者のためのオーバーレイサービス。OBSのブラウザソースで使える配信用オーバーレイを、ワンクリックで導入できます。無料プランから、月額使い放題、専用カスタムまで。
+              TikTok LIVE配信者向けの配信演出SaaS。ギフト・コメント・いいねなどの反応を配信画面上に可視化し、配信者とリスナーのコミュニケーションが自然に盛り上がる体験をつくります。
             </p>
 
             <div className="mt-7 inline-flex items-center gap-3 px-4 py-2 border border-gold/40 bg-gold/5">
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-              <span className="font-mono text-[11px] tracking-[0.18em] text-gold">RELEASED · 100+ USERS IN 3 DAYS</span>
+              <span className="font-mono text-[11px] tracking-[0.18em] text-gold">550+ REGISTERED USERS · 180+ PRO USERS</span>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -138,7 +136,7 @@ const LiveSpark = () => {
         <div className="grid md:grid-cols-12 gap-8 pt-12 border-t border-paper/15">
           <div className="md:col-span-3">
             <div className="font-mono text-[11px] tracking-[0.22em] text-gold mb-3">GETTING STARTED</div>
-            <h3 className="font-jp-serif font-medium text-[22px] leading-[1.5]">かんたん3ステップで<br/>配信を演出</h3>
+            <h3 className="font-jp-serif font-medium text-[22px] leading-[1.5]">導入しやすい形で<br/>配信を演出</h3>
           </div>
           <div className="md:col-span-9 grid sm:grid-cols-3 gap-5">
             {steps.map((s) => (
@@ -173,34 +171,35 @@ const App = () => {
         <Hero />
         <About />
         <ServicesOverview />
+        <LiveSpark />
 
         <ServiceDetail
           label={"MAIN\nBUSINESS"}
-          num="01 / SNS Creative"
-          title="SNS・ライブ配信クリエイティブ"
-          lead="配信現場で実際に使われる動きと演出から、SNS発信における「伝わるビジュアル」まで一貫して制作します。"
-          body="配信事務所運営で培った、視聴者目線・配信者目線の両軸で、シーンに合った見え方を設計します。"
+          num="01 / LiveSpark · TikTok LIVE Creative"
+          title="LiveSparkを中核に、TikTok LIVE領域の配信体験を広げる。"
+          lead="DAIZUは、自社SaaS「LiveSpark」の開発・運営を中心に、TikTok LIVE配信者向けのリアルタイム演出、カスタムオーバーレイ、ギフトアニメーション制作を展開しています。"
+          body="配信の現場で求められるのは、ただ見た目がきれいな素材ではなく、視聴者の反応が画面に伝わり、配信者とリスナーのコミュニケーションが自然に盛り上がる体験です。実際の配信現場で使われるプロダクトを運営しているからこそ、導入しやすさ、見やすさ、盛り上がり方まで含めて設計します。"
           bullets={[
-            "配信用オーバーレイ・画面演出",
-            "ギフトアニメーション制作",
-            "オリジナルスタンプ / 絵文字",
-            "ショート動画・配信用バナー",
-            "キャラクター企画 / 運用デザイン",
-            "SNS投稿クリエイティブ",
+            "配信演出SaaS「LiveSpark」の開発・運営",
+            "ギフト・コメント・いいねに反応するオーバーレイ",
+            "配信者・ライバー事務所向けのカスタム制作",
+            "ギフトアニメーション / スタンプ / SNS素材制作",
+            "OBS / TikTok Live Studioで使いやすい画面設計",
+            "配信現場の声を反映した改善・運用",
           ]}
           side={<SNSDetailSide/>}
         />
 
         <ServiceDetail
           label={"SUPPORT\nAREA"}
-          num="02 / AI Support · DX"
-          title="AI活用支援 / DX相談"
-          lead="「AIをどう使えばいいか整理できていない」段階のご相談から対応します。整理・試作・外部連携まで含めた支援領域です。"
-          body="システム開発会社のような大規模な実装ではなく、現場で使える形まで小さく試して、必要に応じて外部パートナーと連携します。"
+          num="02 / AI Support"
+          title="AIを活用し、配信・SNS事業の制作と運用を速くする。"
+          lead="AI活用支援では、配信・SNS・クリエイティブ制作に関わる業務の整理、制作フローの改善、簡易プロトタイプ制作、外部ツール連携の検討などを支援します。"
+          body="「AIを導入すること」自体を目的にするのではなく、実際の事業や制作現場で使える形に落とし込むことを重視しています。"
           bullets={[
-            "活用方針のすり合わせ",
-            "業務・発信の棚卸し",
-            "簡易プロトタイプ制作",
+            "配信・SNS事業の制作フロー整理",
+            "AI活用方針のすり合わせ",
+            "現場向けの簡易プロトタイプ制作",
             "外部パートナー連携",
           ]}
           side={<AIDetailSide/>}
@@ -209,14 +208,14 @@ const App = () => {
         <ServiceDetail
           label={"WEB\nPRODUCTION"}
           num="03 / Web · LP"
-          title="Web制作 / LP制作"
-          lead="SNS・キャラクター活用の知見を活かし、見え方と伝わり方の両方から設計するWeb・LP制作です。"
-          body="コーポレートサイト、サービスサイト、LPまで、公開後の運用・改修までを含めた構造で設計します。"
+          title="配信・SNS事業の伝わり方を整えるWeb・LP制作。"
+          lead="サービスサイト、LP、コーポレートサイトなど、事業の内容や強みが伝わるWebサイトを制作します。"
+          body="特に、配信・SNS・キャラクター・AI活用など、言葉だけでは伝わりにくい事業の見せ方を整理し、公開後の運用や改善まで見据えた構成を設計します。"
           bullets={[
-            "コーポレート / サービスサイト",
-            "LP（ランディングページ）",
-            "公開後の運用サポート",
-            "更新しやすい構造設計",
+            "配信・SNS関連サービスサイト",
+            "LP / キャンペーンページ",
+            "コーポレートサイト",
+            "公開後の運用・改善サポート",
           ]}
           side={<WebDetailSide/>}
         />
