@@ -46,12 +46,6 @@ const SNSDetailSide = () => (
   </div>
 );
 
-const AIDetailSide = () => (
-  <div className="border border-line overflow-hidden bg-paper">
-    <img src="assets/service-ai.webp" alt="AI活用支援のイメージ" loading="lazy" className="w-full h-auto block" />
-  </div>
-);
-
 const ManagementDetailSide = () => (
   <div className="border border-line overflow-hidden bg-paper">
     <img src="assets/service-sns.webp" alt="配信事務所運営・ライバー支援のイメージ" loading="lazy" className="w-full h-auto block" />
@@ -206,21 +200,6 @@ const App = () => {
             "事務所側の導入・管理フロー設計",
           ]}
           side={<ManagementDetailSide/>}
-        />
-
-        <ServiceDetail
-          label={"SUPPORT\nAREA"}
-          num="03 / AI · Web Support"
-          title="AI活用支援 / Web・LP制作"
-          lead="配信・SNS・デジタル事業の立ち上げや運用に必要なAI活用、業務整理、LP制作、Web制作を支援します。"
-          body="DAIZUでは、LiveSparkや配信事務所運営で得た知見を活かし、サービスの伝わり方、導入導線、SNS・配信との接続まで含めた設計を行います。Web制作は単独の主役ではなく、配信・SNS事業を前に進めるための周辺支援として位置づけています。"
-          bullets={[
-            "配信・SNS事業の制作フロー整理",
-            "AI活用方針のすり合わせ",
-            "LP / サービスサイト制作",
-            "SNS・配信導線を踏まえた情報設計",
-          ]}
-          side={<AIDetailSide/>}
         />
 
         <Naming />

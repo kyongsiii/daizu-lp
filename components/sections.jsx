@@ -111,7 +111,7 @@ const About = () => (
   </section>
 );
 
-// ---------- Services Overview (5 areas) ----------
+// ---------- Services Overview (4 areas) ----------
 const ServicesOverview = () => {
   const areas = [
     {
@@ -146,14 +146,6 @@ const ServicesOverview = () => {
       body: "TikTok LIVEやSNSで使われるギフトアニメーション、ショート動画用素材、スタンプ、バナー、キャラクター演出などを制作します。視聴者に伝わりやすく、記憶に残るビジュアルを設計します。",
       tags: ["ギフトアニメーション", "スタンプ制作", "SNS投稿画像", "キャラクター活用"],
     },
-    {
-      tag: "Support Area",
-      icon: <Icon.AI width="22" height="22" className="text-ink"/>,
-      title: "AI活用支援 / Web・LP制作",
-      lead: "配信・SNS事業を支える周辺支援。",
-      body: "配信・SNS・デジタル事業の立ち上げや運用に必要なAI活用、業務整理、LP制作、Web制作を支援します。LiveSparkや配信事務所運営で得た知見を活かし、サービスの伝わり方、導入導線、SNS・配信との接続まで含めた設計を行います。",
-      tags: ["AI活用相談", "業務整理", "LP制作", "Web制作"],
-    },
   ];
   return (
     <section id="services" className="section border-t border-line bg-paper2/40">
@@ -166,12 +158,12 @@ const ServicesOverview = () => {
                 LiveSparkを中核に、配信領域の表現を広げる。
               </h2>
               <div className="mt-5 text-[13.5px] leading-[2] text-mute">
-                TikTok LIVE領域の配信演出SaaSを中心に、カスタム制作、配信事務所運営で得た現場知見、AI・Web支援までを整理して提供します。
+                TikTok LIVE領域の配信演出SaaSを中心に、カスタム制作、配信事務所運営で得た現場知見、ギフト・SNSクリエイティブまでを整理して提供します。
               </div>
               <div className="mt-6 mx-auto w-16 h-px gold-line"></div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {areas.map((a) => (
                 <div key={a.title} className="card p-7 flex flex-col">
                   <div className="flex items-center justify-between mb-5">
