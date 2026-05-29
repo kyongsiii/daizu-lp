@@ -1,0 +1,281 @@
+// Works, Flow, Company, CTA, Footer
+
+// ---------- Works ----------
+// Replaceable: edit src URLs in #works-data or pass `image` prop in WorksItem
+const WorksPlaceholder = ({tone, title}) => {
+  // Placeholders use tonal blocks + monospace label so user can swap the <img> later
+  const palette = {
+    dark:   { bg:"#0E0E10", fg:"#E6D5AE" },
+    purple: { bg:"#2A1B3D", fg:"#E6D5AE" },
+    cream:  { bg:"#F4EFE2", fg:"#0E0E10" },
+    device: { bg:"#FBFAF7", fg:"#0E0E10" },
+    light:  { bg:"#F2EEE3", fg:"#0E0E10" },
+  }[tone] || { bg:"#F4F2EC", fg:"#0E0E10" };
+
+  return (
+    <div className="aspect-[4/3] w-full ph-stripe relative overflow-hidden border border-line"
+         style={{background: palette.bg, color: palette.fg}}>
+      {/* corner ticks */}
+      <span className="absolute top-2 left-2 w-3 h-3 border-l border-t" style={{borderColor:"currentColor", opacity:0.4}}></span>
+      <span className="absolute top-2 right-2 w-3 h-3 border-r border-t" style={{borderColor:"currentColor", opacity:0.4}}></span>
+      <span className="absolute bottom-2 left-2 w-3 h-3 border-l border-b" style={{borderColor:"currentColor", opacity:0.4}}></span>
+      <span className="absolute bottom-2 right-2 w-3 h-3 border-r border-b" style={{borderColor:"currentColor", opacity:0.4}}></span>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="font-mono text-[10.5px] tracking-[0.18em] opacity-70">[ {title} ]</span>
+      </div>
+    </div>
+  );
+};
+
+const Works = () => {
+  const data = JSON.parse(document.getElementById('works-data').textContent);
+  return (
+    <section id="works" className="section border-t border-line">
+      <div className="container-x">
+        <div className="row-with-label">
+          <div className="label-side pt-2">WORKS</div>
+          <div>
+            <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+              <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink">
+                Works / Output
+              </h2>
+              <span className="label-side">制作実績の一部イメージ。ビジュアルベースでご紹介します。</span>
+            </div>
+
+            {/* numbers bar */}
+            <div className="border-y border-line py-7 mb-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {[
+                { num: "300", suffix: "+", label: "オーバーレイSaaSユーザー", sub: "LiveSpark 累計利用者数", highlight: true },
+                { num: "100", suffix: "+", label: "有料サブスク登録",         sub: "月額プラン契約者数",     highlight: true },
+                { num: "40",  suffix: "+", label: "制作実績",                 sub: "SNS・配信・スタンプ他" },
+                { num: "2",   suffix: "年", label: "配信事務所運営",           sub: "現場で培った演出知見" },
+              ].map((s, i) => (
+                <div key={i} className={`flex flex-col ${s.highlight ? "lg:pr-8 lg:border-r lg:border-line" : ""}`}>
+                  <div className="flex items-baseline gap-1">
+                    <span className={`font-jp-serif font-semibold text-[36px] md:text-[52px] leading-none tabular-nums ${s.highlight ? "text-ink" : "text-ink"}`}>{s.num}</span>
+                    <span className={`font-jp-serif text-[18px] md:text-[22px] ${s.highlight ? "text-gold" : "text-gold2"}`}>{s.suffix}</span>
+                  </div>
+                  <div className={`mt-2 text-[12px] tracking-[0.14em] ${s.highlight ? "text-gold" : "text-gold2"}`}>{s.label}</div>
+                  <div className="mt-1 text-[11.5px] text-mute leading-[1.7] hidden sm:block">{s.sub}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {data.map((w, i) => (
+                <figure key={i} className="group" data-works-slot={i}>
+                  {w.image ? (
+                    <div className="aspect-[4/3] w-full overflow-hidden border border-line bg-paper">
+                      <img src={w.image} alt={w.title} loading="lazy"
+                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                    </div>
+                  ) : (
+                    <WorksPlaceholder tone={w.tone} title={w.title}/>
+                  )}
+                  <figcaption className="mt-4">
+                    <div className="font-jp-serif text-[15.5px] text-ink">{w.title}</div>
+                    <div className="text-[12px] tracking-wide text-mute mt-1.5">{w.caption}</div>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ---------- Flow ----------
+const Flow = () => {
+  const steps = [
+    { n:"01", icon:<Icon.Hearing width="22" height="22"/>, title:"ヒアリング",   body:"ご相談内容や状況を丁寧にお伺いします。" },
+    { n:"02", icon:<Icon.Doc     width="22" height="22"/>, title:"課題整理",     body:"課題や優先順位を整理し、進め方の方針を共有します。" },
+    { n:"03", icon:<Icon.Bulb    width="22" height="22"/>, title:"企画・ラフ提案", body:"アイデアや構成案をご提案します。" },
+    { n:"04", icon:<Icon.Code    width="22" height="22"/>, title:"制作・実装",   body:"設計に基づき、丁寧に形にしていきます。" },
+    { n:"05", icon:<Icon.Chart   width="22" height="22"/>, title:"運用・改善",   body:"運用後もデータを見ながら改善・最適化をサポート。" },
+  ];
+  return (
+    <section className="section border-t border-line bg-paper2/40">
+      <div className="container-x">
+        <div className="row-with-label">
+          <div className="label-side pt-2">FLOW</div>
+          <div>
+            <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink mb-12">Flow</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {steps.map((s, idx) => (
+                <div key={s.n} className="relative">
+                  <div className="card p-6 h-full">
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="w-7 h-7 rounded-full border border-gold text-gold2 flex items-center justify-center font-mono text-[11px]">{s.n}</span>
+                      <span className="text-ink">{s.icon}</span>
+                    </div>
+                    <h3 className="font-jp-serif font-semibold text-[15px] text-ink">{s.title}</h3>
+                    <p className="mt-3 text-[12.5px] leading-[1.9] text-mute">{s.body}</p>
+                  </div>
+                  {idx < steps.length-1 && (
+                    <div className="hidden lg:flex absolute top-1/2 -right-3 w-6 items-center justify-center text-gold pointer-events-none -translate-y-1/2">
+                      <Icon.ArrowRight width="14" height="14"/>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ---------- Company ----------
+const Company = () => {
+  const rows = [
+    ["会社名", "DAIZU合同会社"],
+    ["代表",   "佐々木 響介"],
+    ["所在地", "〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング619"],
+    ["事業内容","SNS制作クリエイティブ / AI活用支援 / Web制作 / キャラクター企画制作"],
+    ["Mail",   "sasaki@daizuinc.jp"],
+    ["TEL",    "090-7673-0307"],
+  ];
+  return (
+    <section id="company" className="section border-t border-line">
+      <div className="container-x">
+        <div className="row-with-label">
+          <div className="label-side pt-2 whitespace-pre-line">ABOUT{"\n"}COMPANY</div>
+          <div className="grid md:grid-cols-12 gap-10">
+            <div className="md:col-span-5">
+              <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink mb-6">About DAIZU</h2>
+              <p className="text-[13.5px] leading-[2.1] text-ink2/85">
+                DAIZU合同会社は、SNS・ライブ配信クリエイティブを主軸に、AI活用支援、Web制作、キャラクター活用までを行うクリエイティブカンパニーです。中小企業のブランドの「伝える」「広げる」「変わる」を支援します。
+              </p>
+            </div>
+            <div className="md:col-span-7">
+              <dl className="border-t border-line">
+                {rows.map(([k,v]) => (
+                  <div key={k} className="grid grid-cols-[110px_1fr] md:grid-cols-[140px_1fr] gap-4 py-4 border-b border-line">
+                    <dt className="text-[12px] tracking-[0.14em] text-gold2 pt-1">{k}</dt>
+                    <dd className="text-[13.5px] leading-[1.85] text-ink2/90">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ---------- Final CTA ----------
+const ContactForm = () => {
+  const [state, setState] = React.useState({ name:"", company:"", email:"", category:"SNS・ライブ配信クリエイティブ", message:"" });
+  const [sent, setSent] = React.useState(false);
+  const update = (k) => (e) => setState({ ...state, [k]: e.target.value });
+
+  const submit = (e) => {
+    e.preventDefault();
+    const subject = `【お問い合わせ】${state.category} / ${state.company || state.name}`;
+    const body =
+      `お名前: ${state.name}\n` +
+      `会社名: ${state.company}\n` +
+      `ご連絡先: ${state.email}\n` +
+      `ご相談カテゴリ: ${state.category}\n\n` +
+      `── ご相談内容 ──\n${state.message}\n`;
+    window.location.href = `mailto:sasaki@daizuinc.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+  };
+
+  const inputCls = "w-full bg-transparent border-b border-line focus:border-gold outline-none py-3 text-[14px] text-ink placeholder:text-mute2 transition-colors";
+  const labelCls = "block text-[11px] tracking-[0.18em] text-gold2 mb-1";
+
+  return (
+    <form onSubmit={submit} className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+      <div className="sm:col-span-1">
+        <label className={labelCls}>お名前 <span className="text-gold">*</span></label>
+        <input required value={state.name} onChange={update('name')} className={inputCls} placeholder="山田 太郎" />
+      </div>
+      <div className="sm:col-span-1">
+        <label className={labelCls}>会社名</label>
+        <input value={state.company} onChange={update('company')} className={inputCls} placeholder="株式会社○○" />
+      </div>
+      <div className="sm:col-span-2">
+        <label className={labelCls}>ご連絡先 <span className="text-gold">*</span></label>
+        <input required type="email" value={state.email} onChange={update('email')} className={inputCls} placeholder="you@example.com" />
+      </div>
+      <div className="sm:col-span-2">
+        <label className={labelCls}>ご相談カテゴリ</label>
+        <select value={state.category} onChange={update('category')} className={inputCls + " appearance-none bg-paper"}>
+          <option>SNS・ライブ配信クリエイティブ</option>
+          <option>AI活用支援 / DX相談</option>
+          <option>Web制作 / LP制作</option>
+          <option>キャラクター企画</option>
+          <option>その他 / 全般のご相談</option>
+        </select>
+      </div>
+      <div className="sm:col-span-2">
+        <label className={labelCls}>ご相談内容</label>
+        <textarea required rows="4" value={state.message} onChange={update('message')} className={inputCls + " resize-none"} placeholder="現在のお悩みや、お問い合わせ内容をご記入ください。"></textarea>
+      </div>
+      <div className="sm:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-2">
+        <span className="text-[11.5px] tracking-wide text-mute">送信ボタンでメーラーが起動します。直接送信される方は <a href="mailto:sasaki@daizuinc.jp" className="text-gold2 underline">sasaki@daizu.inc.jp</a></span>
+        <button type="submit" className="btn-gold inline-flex items-center justify-between gap-8 px-7 py-4 text-[13px] tracking-[0.16em]">
+          <span>{sent ? "送信しました" : "内容を送信する"}</span>
+          <Icon.ArrowRight width="18" height="18" className="arrow-right"/>
+        </button>
+      </div>
+    </form>
+  );
+};
+
+const FinalCTA = () => (
+  <section id="contact" className="section border-t border-line">
+    <div className="container-x">
+      <div className="row-with-label">
+        <div className="label-side pt-2">CONTACT</div>
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14">
+          <div className="md:col-span-5">
+            <h2 className="font-jp-serif font-semibold text-[30px] md:text-[42px] leading-[1.4] text-ink">
+              まずは、お気軽に<br/>ご相談ください。
+            </h2>
+            <p className="mt-5 text-[13.5px] leading-[2] text-ink2/85 max-w-[440px]">
+              企画段階のご相談から、SNS・ライブ配信クリエイティブ、AI活用、Web制作、キャラクター活用まで、事業に合わせて柔軟にご提案します。
+            </p>
+            <div className="mt-8 inline-flex items-center gap-3 text-[12.5px] text-gold2 tracking-wide">
+              <span className="dot-gold"></span>
+              <span>初回30分の無料相談から始められます</span>
+            </div>
+          </div>
+          <div className="md:col-span-7">
+            <ContactForm/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ---------- Footer ----------
+const Footer = () => (
+  <footer className="border-t border-line py-10">
+    <div className="container-x flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+      <div className="flex items-center gap-2.5">
+        <Icon.Logo size={22}/>
+        <span className="font-jp-serif font-semibold tracking-[0.2em] text-[13px]">DAIZU, LLC</span>
+      </div>
+      <div className="font-mono text-[10.5px] tracking-[0.2em] text-mute">
+        Creative Direction / DX Support / Web Production
+      </div>
+      <div className="font-mono text-[10.5px] tracking-[0.18em] text-mute2">
+        © 2026 DAIZU合同会社
+      </div>
+    </div>
+  </footer>
+);
+
+window.Works = Works;
+window.Flow = Flow;
+window.Company = Company;
+window.FinalCTA = FinalCTA;
+window.Footer = Footer;
+window.WorksPlaceholder = WorksPlaceholder;

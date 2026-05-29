@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DAIZU合同会社 | SNS Creative / AI Support / Web Production</title>
+<meta name="description" content="DAIZU合同会社は、SNS・ライブ配信クリエイティブを主軸に、AI活用支援・DX相談・Web制作まで柔軟に支援するクリエイティブカンパニー。TikTok LIVE向けオーバーレイサービス「LiveSpark」も運営しています。" />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<meta property="og:title" content="DAIZU合同会社" />
+<meta property="og:description" content="SNS・ライブ配信クリエイティブを主軸に、AI活用支援・Web制作まで柔軟に支援するクリエイティブカンパニー。" />
+<meta property="og:url" content="https://daizuinc.jp/" />
+<meta property="og:image" content="assets/ogp.webp" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="ext-resource-dependency" content="https://cdn.tailwindcss.com" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#0E0E10',     /* near-black */
+          ink2:   '#1A1A1D',
+          paper:  '#FBFAF7',     /* warm off-white */
+          paper2: '#F4F2EC',
+          line:   '#E6E2D8',
+          line2:  '#D8D2C2',
+          mute:   '#6B6A66',
+          mute2:  '#9A968B',
+          gold:   '#B89556',     /* primary gold */
+          gold2:  '#8E6F38',     /* deeper gold (text on light) */
+          gold3:  '#E6D5AE',     /* tint */
+        },
+        fontFamily: {
+          sans:  ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+          serif: ['"Noto Serif JP"', 'serif'],
+          display: ['"Cormorant Garamond"', '"Noto Serif JP"', 'serif'],
+          mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html, body { background:#FBFAF7; color:#0E0E10; }
+  body { font-family:'Noto Sans JP', system-ui, sans-serif; -webkit-font-smoothing:antialiased; font-feature-settings:"palt"; }
+  .font-jp-serif { font-family:'Noto Serif JP', serif; }
+  .label-side { font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:0.18em; font-size:11px; color:#8E6F38; }
+  .hairline { background: #E6E2D8; }
+  .gold-line { background: linear-gradient(90deg, transparent, #B89556 18%, #B89556 82%, transparent); }
+  .btn-gold {
+    background:#0E0E10; color:#FBFAF7;
+    border:1px solid #0E0E10;
+    transition: all .25s ease;
+  }
+  .btn-gold:hover { background:#B89556; border-color:#B89556; color:#0E0E10; }
+  .btn-ghost {
+    background:transparent; color:#0E0E10; border:1px solid #0E0E10;
+    transition: all .25s ease;
+  }
+  .btn-ghost:hover { background:#0E0E10; color:#FBFAF7; }
+  .card {
+    background:#fff; border:1px solid #E6E2D8;
+    transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover {
+    border-color:#B89556;
+    box-shadow: 0 12px 40px -24px rgba(184,149,86,0.45);
+  }
+  .fade-in { opacity:0; transform: translateY(8px); transition: opacity .8s ease, transform .8s ease; }
+  .fade-in.visible { opacity:1; transform:none; }
+  /* hero ornamental dome */
+  .dome-bg {
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 60%, rgba(184,149,86,0.10), transparent 70%),
+      radial-gradient(ellipse 80% 100% at 50% 50%, rgba(0,0,0,0.04), transparent 70%);
+  }
+  /* striped placeholder */
+  .ph-stripe {
+    background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.04) 0 8px, transparent 8px 16px);
+  }
+  /* nav underline */
+  .nav-link { position:relative; }
+  .nav-link::after {
+    content:""; position:absolute; left:50%; right:50%; bottom:-6px; height:1px;
+    background:#B89556; transition: all .3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { left:0; right:0; }
+
+  /* tiny dotted gold ornament */
+  .dot-gold { width:6px; height:6px; border-radius:9999px; background:#B89556; display:inline-block; }
+
+  /* arrow */
+  .arrow-right { display:inline-block; transition: transform .3s ease; }
+  .group:hover .arrow-right, a:hover .arrow-right, button:hover .arrow-right { transform: translateX(4px); }
+
+  /* section padding */
+  .section { padding: 96px 0; }
+  @media (max-width: 768px) { .section { padding: 64px 0; } }
+
+  /* container */
+  .container-x { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 1024px) { .container-x { padding: 0 40px; } }
+
+  /* layout grid w/ side label */
+  .row-with-label { display:grid; grid-template-columns: 110px 1fr; gap: 32px; }
+  @media (max-width: 768px) {
+    .row-with-label { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#FBFAF7"/>
+  <g transform="translate(60,60)">
+    <path d="M0 0 H40 V20 H10 V60 H40 V80 H0 Z" fill="#0E0E10"/>
+    <path d="M40 0 A40 40 0 0 1 40 80 Z" fill="#B89556"/>
+  </g>
+  <text x="100" y="170" font-family="serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0E0E10" letter-spacing="2">DAIZU</text>
+</svg>
+</template>
+<div id="root"></div>
+
+<!-- Replaceable Works image registry (swap src here later) -->
+<script type="application/json" id="works-data">
+[
+  { "title": "SNS Creative",        "caption": "配信オーバーレイ・画面演出",   "tone": "dark",   "image": "assets/works/01-sns-creative.webp" },
+  { "title": "Animation / Gift",    "caption": "ギフト・スタンプアニメ",        "tone": "purple", "image": "assets/works/02-animation-gift.webp" },
+  { "title": "Original Stamp",      "caption": "オリジナルスタンプ・絵文字",    "tone": "cream",  "image": "assets/works/03-original-stamp.webp" },
+  { "title": "Web / LP Design",     "caption": "コーポレート・LP制作",         "tone": "device", "image": "assets/works/04-web-lp.webp" },
+  { "title": "Character Planning",  "caption": "キャラクター企画・運用",        "tone": "light",  "image": "assets/works/05-character-planning.webp" }
+]
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/icons.jsx"></script>
+<script type="text/babel" src="components/sections.jsx"></script>
+<script type="text/babel" src="components/works.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
