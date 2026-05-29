@@ -39,7 +39,7 @@ const SNSDetailSide = () => (
         </p>
         <div className="mt-5 pt-4 border-t border-paper/15 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-          <span className="font-mono text-[10px] tracking-[0.22em] text-gold/85">livespark.jp · 550+ USERS</span>
+          <span className="font-mono text-[10px] tracking-[0.22em] text-gold/85">livespark.jp · 750+ USERS</span>
         </div>
       </div>
     </a>
@@ -96,7 +96,7 @@ const LiveSpark = () => {
 
             <div className="mt-7 inline-flex items-center gap-3 px-4 py-2 border border-gold/40 bg-gold/5">
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-              <span className="font-mono text-[11px] tracking-[0.18em] text-gold">550+ REGISTERED USERS · 180+ PRO USERS</span>
+              <span className="font-mono text-[11px] tracking-[0.18em] text-gold">750+ REGISTERED USERS · 250+ PRO USERS</span>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">

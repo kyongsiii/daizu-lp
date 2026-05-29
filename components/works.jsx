@@ -45,9 +45,9 @@ const Works = () => {
             {/* numbers bar */}
             <div className="border-y border-line py-7 mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {[
-                { num: "550", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
-                { num: "180", suffix: "+", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
-                { num: "40",  suffix: "+", label: "制作実績",               sub: "オーバーレイ・ギフトアニメーション・SNS素材など" },
+                { num: "750", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
+                { num: "250", suffix: "+", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
+                { num: "50",  suffix: "+", label: "制作実績",               sub: "オーバーレイ・ギフトアニメーション・SNS素材など" },
                 { num: "2",   suffix: "年", label: "配信事務所運営",         sub: "現場で培った配信・演出知見" },
                 { num: "3",   suffix: "",  label: "運用中アカウント",       sub: "SNS / 配信ノウハウを蓄積" },
               ].map((s, i) => (
