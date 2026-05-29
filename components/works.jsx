@@ -28,13 +28,12 @@ const WorksPlaceholder = ({tone, title}) => {
 };
 
 const userGrowthData = [
-  { period: "3/31", users: 4 },
-  { period: "4/20", users: 4 },
-  { period: "4/25", users: 15 },
-  { period: "4/30", users: 68 },
-  { period: "5/7", users: 224 },
-  { period: "5/14", users: 394 },
-  { period: "5/21", users: 544 },
+  { period: "4/24", users: 0 },
+  { period: "4/25", users: 7 },
+  { period: "4/30", users: 60 },
+  { period: "5/7", users: 216 },
+  { period: "5/14", users: 386 },
+  { period: "5/21", users: 536 },
   { period: "5/29", users: 750 },
 ];
 
@@ -54,7 +53,7 @@ const UserGrowthChart = () => {
   }, []);
 
   const chartData = isCompact
-    ? userGrowthData.filter((_, i) => [0, 2, 3, 4, 6, 7].includes(i))
+    ? userGrowthData.filter((_, i) => [0, 2, 3, 5, 6].includes(i))
     : userGrowthData;
   const width = isCompact ? 360 : 760;
   const height = isCompact ? 250 : 280;
@@ -83,7 +82,7 @@ const UserGrowthChart = () => {
             LiveSpark登録ユーザー数の推移
           </h3>
           <p className="mt-2 text-[12.5px] leading-[1.8] text-mute max-w-[620px]">
-            2026年3月末から5月末までの登録ユーザー数を累計で集計。TikTok LIVE配信者を中心に利用が広がっています。
+            2026年4月24日を起点に、登録ユーザー数の増加を累計で集計。TikTok LIVE配信者を中心に利用が広がっています。
           </p>
         </div>
         <div className="text-left md:text-right shrink-0">
