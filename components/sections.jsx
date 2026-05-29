@@ -51,7 +51,7 @@ const Hero = () => (
           DAIZU合同会社 &nbsp;—&nbsp; Live Streaming SaaS & Creative Company
         </div>
         <div className="mt-6 max-w-[560px] text-[14.5px] leading-[2] text-ink2/85">
-          DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行っています。
+          DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、配信事務所運営・ライバー支援、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行っています。
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <a href="#contact" className="btn-gold inline-flex items-center justify-between gap-6 px-7 py-4 text-[13.5px] tracking-[0.14em]">
@@ -93,7 +93,7 @@ const About = () => (
             <div className="mt-6 text-[14.5px] leading-[2.1] text-ink2/85">
               <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信者・ライバー事務所・関連企業に向けた配信演出とクリエイティブ支援を行う会社です。</p>
               <p className="mt-4">自社SaaS「LiveSpark」の開発・運営を通じて、ギフト・コメント・いいねなどのリアルタイムな反応を、配信画面上の演出として可視化する仕組みを提供しています。</p>
-              <p className="mt-4">また、カスタムオーバーレイ、ギフトアニメーション、AIを活用した制作支援、Web・LP制作まで、配信・SNS領域に必要な表現を柔軟にサポートします。</p>
+              <p className="mt-4">また、配信事務所運営・ライバー支援で得た現場知見を活かし、カスタムオーバーレイ、ギフトアニメーション、AIを活用した制作支援、Web・LP制作まで、配信・SNS領域に必要な表現を柔軟にサポートします。</p>
             </div>
           </div>
           <div className="md:col-span-5">
@@ -111,7 +111,7 @@ const About = () => (
   </section>
 );
 
-// ---------- Services Overview (4 areas) ----------
+// ---------- Services Overview (5 areas) ----------
 const ServicesOverview = () => {
   const areas = [
     {
@@ -131,6 +131,14 @@ const ServicesOverview = () => {
       tags: ["カスタムオーバーレイ", "ギフト演出", "コメント演出", "事務所向け"],
     },
     {
+      tag: "Live Management",
+      icon: <Icon.Hands width="22" height="22" className="text-ink"/>,
+      title: "配信事務所運営 / ライバー支援",
+      lead: "配信現場で得た知見をプロダクトに反映。",
+      body: "DAIZUでは、TikTok LIVEを中心とした配信事務所運営・ライバー支援にも取り組んでいます。配信者の活動、視聴者とのコミュニケーション、ギフト導線、配信画面の見せ方、PC配信の導入など、実際の配信現場で得た知見をもとに、LiveSparkやカスタム制作にも反映しています。単なるツール提供ではなく、配信者・事務所・視聴者それぞれの目線から配信体験を設計します。",
+      tags: ["配信事務所運営", "ライバー支援", "現場知見", "PC配信導入"],
+    },
+    {
       tag: "Animation / SNS Creative",
       icon: <Icon.Pen width="22" height="22" className="text-ink"/>,
       title: "ギフトアニメーション / SNSクリエイティブ",
@@ -143,7 +151,7 @@ const ServicesOverview = () => {
       icon: <Icon.AI width="22" height="22" className="text-ink"/>,
       title: "AI活用支援 / Web・LP制作",
       lead: "配信・SNS事業を支える周辺支援。",
-      body: "配信・SNS・デジタル事業の立ち上げや運用に必要なAI活用、業務整理、LP制作、Web制作を支援します。現場で使える形を小さく試しながら、必要に応じて外部パートナーとも連携します。",
+      body: "配信・SNS・デジタル事業の立ち上げや運用に必要なAI活用、業務整理、LP制作、Web制作を支援します。LiveSparkや配信事務所運営で得た知見を活かし、サービスの伝わり方、導入導線、SNS・配信との接続まで含めた設計を行います。",
       tags: ["AI活用相談", "業務整理", "LP制作", "Web制作"],
     },
   ];
@@ -158,12 +166,12 @@ const ServicesOverview = () => {
                 LiveSparkを中核に、配信領域の表現を広げる。
               </h2>
               <div className="mt-5 text-[13.5px] leading-[2] text-mute">
-                TikTok LIVE領域の配信演出SaaSを中心に、カスタム制作、ギフトアニメーション、AI・Web支援までを整理して提供します。
+                TikTok LIVE領域の配信演出SaaSを中心に、カスタム制作、配信事務所運営で得た現場知見、AI・Web支援までを整理して提供します。
               </div>
               <div className="mt-6 mx-auto w-16 h-px gold-line"></div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-5">
               {areas.map((a) => (
                 <div key={a.title} className="card p-7 flex flex-col">
                   <div className="flex items-center justify-between mb-5">
@@ -246,7 +254,7 @@ const Naming = () => (
           </div>
           <div className="md:col-span-7 text-[14px] leading-[2.2] text-ink2/85">
             DAIZUという名前は、「大豆は小さくても、何にでもなれる」という想いから生まれました。<br/>
-            大豆は、きな粉にも、納豆にも、醤油にもなる。DAIZUも同じように、ひとつの形にとらわれず、TikTok LIVE領域のSaaS開発、配信演出、カスタムクリエイティブ、AI活用支援、Web制作など、事業に合わせて柔軟に形を変えながら、必要な価値を届けていきます。
+            大豆は、きな粉にも、納豆にも、醤油にもなる。DAIZUも同じように、ひとつの形にとらわれず、TikTok LIVE領域のSaaS開発、配信演出、配信事務所運営・ライバー支援、カスタムクリエイティブ、AI活用支援、Web制作など、事業に合わせて柔軟に形を変えながら、必要な価値を届けていきます。
           </div>
         </div>
       </div>
@@ -258,9 +266,9 @@ const Naming = () => (
 const Strengths = () => {
   const items = [
     { icon: <Icon.Play width="22" height="22"/>,  title: "TikTok LIVE領域への理解",      body: "ギフト、コメント、いいね、視聴者参加など、配信現場で求められるリアルタイムな盛り上がりを理解した設計ができます。" },
+    { icon: <Icon.Hands width="22" height="22"/>, title: "配信事務所運営で得た現場知見", body: "ライバー支援や配信事務所運営を通じて、配信者が実際に困るポイントや、事務所側の導入・管理のしやすさを理解しています。" },
     { icon: <Icon.Code width="22" height="22"/>,  title: "自社SaaS運営による実装力",     body: "LiveSparkの開発・運営を通じて、配信者が実際に使いやすいオーバーレイや管理画面の設計を行っています。" },
     { icon: <Icon.Speed width="22" height="22"/>, title: "AIを活用したスピード感",       body: "企画、制作、試作、改善を素早く回し、必要な形まで短期間で具体化します。" },
-    { icon: <Icon.Hands width="22" height="22"/>, title: "小回りの効く柔軟な対応",       body: "カスタム制作、事務所向け相談、外部パートナー連携など、状況に合わせて柔軟に対応します。" },
   ];
   return (
     <section className="section border-t border-line">
@@ -270,8 +278,8 @@ const Strengths = () => {
           <div>
             <div className="max-w-3xl">
               <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.5] text-ink">
-                配信現場を知るSaaS事業者だから、<br className="hidden md:block"/>
-                実装まで見据えて提案できる。
+                配信現場とSaaS運営の両方を知るから、<br className="hidden md:block"/>
+                実用的な提案ができる。
               </h2>
             </div>
             <div className="mt-12 grid md:grid-cols-4 gap-4">
@@ -296,13 +304,16 @@ const Strengths = () => {
 // ---------- Consultation Examples ----------
 const Consultation = () => {
   const cases = [
-    "所属ライバー向けに配信演出ツールを導入したい",
+    "所属ライバー向けにLiveSparkを導入したい",
+    "ライバー事務所として配信画面の演出を整えたい",
     "TikTok LIVEの配信画面をもっと盛り上げたい",
-    "事務所オリジナルのオーバーレイを作りたい",
+    "所属ライバー向けのカスタムオーバーレイを作りたい",
     "ギフトやコメントに反応する演出を作りたい",
+    "配信事務所向けの導入フローを相談したい",
     "配信者向けの企画・イベント演出を相談したい",
+    "配信者の活動を伸ばすための演出や企画を相談したい",
     "ギフトアニメーションやSNS素材を制作したい",
-    "PC配信 / OBS / TikTok Live Studioまわりの導入を整理したい",
+    "PC配信やTikTok Live Studioの導入を整理したい",
     "AIを使って制作や運用のスピードを上げたい",
     "サービスサイトやLPの見せ方を整えたい",
   ];

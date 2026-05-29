@@ -52,9 +52,9 @@ const AIDetailSide = () => (
   </div>
 );
 
-const WebDetailSide = () => (
+const ManagementDetailSide = () => (
   <div className="border border-line overflow-hidden bg-paper">
-    <img src="assets/service-web.webp" alt="Web・LP制作のイメージ" loading="lazy" className="w-full h-auto block" />
+    <img src="assets/service-sns.webp" alt="配信事務所運営・ライバー支援のイメージ" loading="lazy" className="w-full h-auto block" />
   </div>
 );
 
@@ -178,7 +178,7 @@ const App = () => {
           num="01 / LiveSpark · TikTok LIVE Creative"
           title="LiveSparkを中核に、TikTok LIVE領域の配信体験を広げる。"
           lead="DAIZUは、自社SaaS「LiveSpark」の開発・運営を中心に、TikTok LIVE配信者向けのリアルタイム演出、カスタムオーバーレイ、ギフトアニメーション制作を展開しています。"
-          body="配信の現場で求められるのは、ただ見た目がきれいな素材ではなく、視聴者の反応が画面に伝わり、配信者とリスナーのコミュニケーションが自然に盛り上がる体験です。実際の配信現場で使われるプロダクトを運営しているからこそ、導入しやすさ、見やすさ、盛り上がり方まで含めて設計します。"
+          body="配信の現場で求められるのは、ただ見た目がきれいな素材ではなく、視聴者の反応が画面に伝わり、配信者とリスナーのコミュニケーションが自然に盛り上がる体験です。また、DAIZUでは配信事務所運営・ライバー支援にも取り組んでおり、配信者が実際にどのような悩みを持ち、どのような演出や導入支援を必要としているかを、現場目線で把握しています。その知見をLiveSparkの機能改善、カスタムオーバーレイ制作、ギフトアニメーション制作に反映することで、見た目だけではなく、実際の配信で使いやすい体験づくりを行っています。"
           bullets={[
             "配信演出SaaS「LiveSpark」の開発・運営",
             "ギフト・コメント・いいねに反応するオーバーレイ",
@@ -186,38 +186,41 @@ const App = () => {
             "ギフトアニメーション / スタンプ / SNS素材制作",
             "OBS / TikTok Live Studioで使いやすい画面設計",
             "配信現場の声を反映した改善・運用",
+            "配信事務所運営で得た現場知見",
+            "ライバー支援・PC配信導入のサポート",
+            "配信者・事務所・視聴者それぞれの目線を踏まえた設計",
           ]}
           side={<SNSDetailSide/>}
         />
 
         <ServiceDetail
-          label={"SUPPORT\nAREA"}
-          num="02 / AI Support"
-          title="AIを活用し、配信・SNS事業の制作と運用を速くする。"
-          lead="AI活用支援では、配信・SNS・クリエイティブ制作に関わる業務の整理、制作フローの改善、簡易プロトタイプ制作、外部ツール連携の検討などを支援します。"
-          body="「AIを導入すること」自体を目的にするのではなく、実際の事業や制作現場で使える形に落とし込むことを重視しています。"
+          label={"LIVE\nMANAGEMENT"}
+          num="02 / Live Management"
+          title="配信事務所運営とライバー支援で、現場の課題を知る。"
+          lead="DAIZUでは、TikTok LIVEを中心とした配信事務所運営・ライバー支援にも取り組んでいます。"
+          body="配信者の活動、視聴者とのコミュニケーション、ギフト導線、配信画面の見せ方、PC配信の導入など、実際の配信現場で得た知見をもとに、LiveSparkやカスタム制作にも反映しています。外部企業・ライバー事務所から見ても導入しやすいよう、配信者・事務所・視聴者それぞれの目線を踏まえて設計します。"
           bullets={[
-            "配信・SNS事業の制作フロー整理",
-            "AI活用方針のすり合わせ",
-            "現場向けの簡易プロトタイプ制作",
-            "外部パートナー連携",
+            "配信事務所運営で得た現場知見",
+            "ライバー支援・活動設計",
+            "PC配信 / TikTok Live Studio導入整理",
+            "事務所側の導入・管理フロー設計",
           ]}
-          side={<AIDetailSide/>}
+          side={<ManagementDetailSide/>}
         />
 
         <ServiceDetail
-          label={"WEB\nPRODUCTION"}
-          num="03 / Web · LP"
-          title="配信・SNS事業の伝わり方を整えるWeb・LP制作。"
-          lead="サービスサイト、LP、コーポレートサイトなど、事業の内容や強みが伝わるWebサイトを制作します。"
-          body="特に、配信・SNS・キャラクター・AI活用など、言葉だけでは伝わりにくい事業の見せ方を整理し、公開後の運用や改善まで見据えた構成を設計します。"
+          label={"SUPPORT\nAREA"}
+          num="03 / AI · Web Support"
+          title="AI活用支援 / Web・LP制作"
+          lead="配信・SNS・デジタル事業の立ち上げや運用に必要なAI活用、業務整理、LP制作、Web制作を支援します。"
+          body="DAIZUでは、LiveSparkや配信事務所運営で得た知見を活かし、サービスの伝わり方、導入導線、SNS・配信との接続まで含めた設計を行います。Web制作は単独の主役ではなく、配信・SNS事業を前に進めるための周辺支援として位置づけています。"
           bullets={[
-            "配信・SNS関連サービスサイト",
-            "LP / キャンペーンページ",
-            "コーポレートサイト",
-            "公開後の運用・改善サポート",
+            "配信・SNS事業の制作フロー整理",
+            "AI活用方針のすり合わせ",
+            "LP / サービスサイト制作",
+            "SNS・配信導線を踏まえた情報設計",
           ]}
-          side={<WebDetailSide/>}
+          side={<AIDetailSide/>}
         />
 
         <Naming />

@@ -47,8 +47,8 @@ const Works = () => {
               {[
                 { num: "750", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
                 { num: "250", suffix: "+", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
+                { num: "2",   suffix: "年", label: "配信事務所運営",         sub: "ライバー支援・配信現場で培った知見" },
                 { num: "50",  suffix: "+", label: "制作実績",               sub: "オーバーレイ・ギフトアニメーション・SNS素材など" },
-                { num: "2",   suffix: "年", label: "配信事務所運営",         sub: "現場で培った配信・演出知見" },
                 { num: "3",   suffix: "",  label: "運用中アカウント",       sub: "SNS / 配信ノウハウを蓄積" },
               ].map((s, i) => (
                 <div key={i} className={`flex flex-col ${i < 2 ? "lg:pr-8 lg:border-r lg:border-line" : ""}`}>
@@ -135,7 +135,7 @@ const Company = () => {
     ["会社名", "DAIZU合同会社"],
     ["代表",   "佐々木 響介"],
     ["所在地", "〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング619"],
-    ["事業内容","配信演出SaaS「LiveSpark」の開発・運営\nTikTok LIVE向けカスタムオーバーレイ制作\nギフトアニメーション / SNSクリエイティブ制作\nAI活用支援 / Web・LP制作"],
+    ["事業内容","配信演出SaaS「LiveSpark」の開発・運営\nTikTok LIVE向けカスタムオーバーレイ制作\n配信事務所運営 / ライバー支援\nギフトアニメーション / SNSクリエイティブ制作\nAI活用支援 / Web・LP制作"],
     ["Mail",   "sasaki@daizuinc.jp"],
     ["TEL",    "090-7673-0307"],
   ];
@@ -148,7 +148,7 @@ const Company = () => {
             <div className="md:col-span-5">
               <h2 className="font-jp-serif font-medium text-[26px] md:text-[34px] leading-[1.4] text-ink mb-6">About DAIZU</h2>
               <div className="text-[13.5px] leading-[2.1] text-ink2/85">
-                <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行う会社です。</p>
+                <p>DAIZU合同会社は、TikTok LIVEを中心としたライブ配信領域で、配信演出SaaS「LiveSpark」の開発・運営、カスタムオーバーレイ制作、配信事務所運営・ライバー支援、ギフトアニメーション制作、AIを活用したクリエイティブ支援を行う会社です。</p>
                 <p className="mt-4">配信者、ライバー事務所、関連企業に向けて、配信現場で実際に使われる演出と、導入しやすい仕組みづくりを支援します。</p>
               </div>
             </div>
@@ -210,8 +210,9 @@ const ContactForm = () => {
         <select value={state.category} onChange={update('category')} className={inputCls + " appearance-none bg-paper"}>
           <option>LiveSpark導入相談</option>
           <option>カスタムオーバーレイ制作</option>
-          <option>ギフトアニメーション制作</option>
+          <option>配信事務所・ライバー支援</option>
           <option>ライバー事務所・法人提携</option>
+          <option>ギフトアニメーション制作</option>
           <option>AI活用支援</option>
           <option>Web・LP制作</option>
           <option>その他</option>
@@ -243,7 +244,7 @@ const FinalCTA = () => (
               配信演出・導入相談・<br/>提携のご相談はこちら。
             </h2>
             <p className="mt-5 text-[13.5px] leading-[2] text-ink2/85 max-w-[440px]">
-              LiveSparkの導入相談、カスタムオーバーレイ制作、ギフトアニメーション制作、ライバー事務所・関連企業様との提携相談まで、お気軽にご相談ください。
+              LiveSparkの導入相談、カスタムオーバーレイ制作、配信事務所・ライバー支援、ギフトアニメーション制作、ライバー事務所・関連企業様との提携相談まで、お気軽にご相談ください。
               <br/><br/>
               企画段階のご相談から、導入方法の整理、制作・運用まで柔軟に対応します。
             </p>
@@ -270,7 +271,7 @@ const Footer = () => (
         <span className="font-jp-serif font-semibold tracking-[0.2em] text-[13px]">DAIZU, LLC</span>
       </div>
       <div className="font-mono text-[10.5px] tracking-[0.2em] text-mute">
-        TikTok LIVE SaaS / Custom Overlay / Creative Support
+        TikTok LIVE SaaS / Live Management / Creative Support
       </div>
       <div className="font-mono text-[10.5px] tracking-[0.18em] text-mute2">
         © 2026 DAIZU合同会社
