@@ -28,13 +28,13 @@ const WorksPlaceholder = ({tone, title}) => {
 };
 
 const userGrowthData = [
-  { period: "4/24", users: 0 },
-  { period: "4/25", users: 7 },
-  { period: "4/30", users: 60 },
-  { period: "5/7", users: 216 },
-  { period: "5/14", users: 386 },
-  { period: "5/21", users: 536 },
-  { period: "5/29", users: 750 },
+  { period: "4/24", users: 0, proUsers: 0 },
+  { period: "4/25", users: 7, proUsers: 2 },
+  { period: "4/30", users: 60, proUsers: 20 },
+  { period: "5/7", users: 216, proUsers: 72 },
+  { period: "5/14", users: 386, proUsers: 129 },
+  { period: "5/21", users: 536, proUsers: 179 },
+  { period: "5/29", users: 750, proUsers: 250 },
 ];
 
 const UserGrowthChart = () => {
@@ -67,10 +67,12 @@ const UserGrowthChart = () => {
   const points = chartData.map((d, i) => ({
     ...d,
     x: pad.left + (plotW * i) / (chartData.length - 1),
-    y: baseY - (d.users / maxUsers) * plotH,
+    userY: baseY - (d.users / maxUsers) * plotH,
+    proY: baseY - (d.proUsers / maxUsers) * plotH,
   }));
-  const linePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
-  const areaPath = `${linePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`;
+  const userLinePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.userY}`).join(" ");
+  const proLinePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.proY}`).join(" ");
+  const areaPath = `${userLinePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`;
   const yTicks = [0, 200, 400, 600, 800];
 
   return (
@@ -79,25 +81,43 @@ const UserGrowthChart = () => {
         <div>
           <div className="label-side mb-2">USER GROWTH</div>
           <h3 className="font-jp-serif font-semibold text-[20px] md:text-[24px] leading-[1.45] text-ink">
-            LiveSpark登録ユーザー数の推移
+            LiveSpark登録ユーザー・Proユーザー数の推移
           </h3>
           <p className="mt-2 text-[12.5px] leading-[1.8] text-mute max-w-[620px]">
-            2026年4月24日を起点に、登録ユーザー数の増加を累計で集計。TikTok LIVE配信者を中心に利用が広がっています。
+            2026年4月24日を起点に、登録ユーザー数とProユーザー数の増加を累計で表示。TikTok LIVE配信者を中心に利用が広がっています。
           </p>
         </div>
-        <div className="text-left md:text-right shrink-0">
-          <div className="font-jp-serif font-semibold text-[34px] md:text-[42px] leading-none text-ink">
-            750<span className="text-[18px] md:text-[22px] text-gold">+</span>
+        <div className="grid grid-cols-2 gap-5 text-left md:text-right shrink-0">
+          <div>
+            <div className="font-jp-serif font-semibold text-[32px] md:text-[42px] leading-none text-ink">
+              750<span className="text-[18px] md:text-[22px] text-gold">+</span>
+            </div>
+            <div className="mt-1 text-[10.5px] tracking-[0.14em] text-gold2">REGISTERED</div>
           </div>
-          <div className="mt-1 text-[11px] tracking-[0.14em] text-gold2">REGISTERED USERS</div>
+          <div>
+            <div className="font-jp-serif font-semibold text-[32px] md:text-[42px] leading-none text-ink">
+              250<span className="text-[18px] md:text-[22px] text-gold">+</span>
+            </div>
+            <div className="mt-1 text-[10.5px] tracking-[0.14em] text-gold2">PRO USERS</div>
+          </div>
         </div>
       </div>
 
       <div>
+        <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] tracking-[0.12em] text-mute">
+          <span className="inline-flex items-center gap-2">
+            <span className="h-[2px] w-8 bg-[#9D7A32]"></span>
+            登録ユーザー
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="h-[2px] w-8 bg-ink"></span>
+            Proユーザー
+          </span>
+        </div>
         <svg
           viewBox={`0 0 ${width} ${height}`}
           role="img"
-          aria-label="LiveSpark登録ユーザー数の推移グラフ。横軸は時期、縦軸は人数。"
+          aria-label="LiveSpark登録ユーザー数とProユーザー数の推移グラフ。横軸は時期、縦軸は人数。"
           className="w-full h-auto"
         >
           <defs>
@@ -121,7 +141,8 @@ const UserGrowthChart = () => {
           })}
 
           <path d={areaPath} fill="url(#userGrowthFill)" />
-          <path d={linePath} fill="none" stroke="#9D7A32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d={userLinePath} fill="none" stroke="#9D7A32" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d={proLinePath} fill="none" stroke="#0E0E10" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
 
           {points.map((p, i) => {
             const isLast = i === points.length - 1;
@@ -129,11 +150,14 @@ const UserGrowthChart = () => {
               <g key={p.period}>
                 <line x1={p.x} y1={baseY} x2={p.x} y2={baseY + 5} stroke="#B8AA91" strokeWidth="1" />
                 <text x={p.x} y={baseY + 23} textAnchor="middle" className="fill-mute" fontSize="11">{p.period}</text>
-                <circle cx={p.x} cy={p.y} r={isLast ? 5 : 4} fill={isLast ? "#0E0E10" : "#FBFAF7"} stroke="#9D7A32" strokeWidth="2" />
+                <circle cx={p.x} cy={p.userY} r={isLast ? 5 : 4} fill={isLast ? "#9D7A32" : "#FBFAF7"} stroke="#9D7A32" strokeWidth="2" />
+                <circle cx={p.x} cy={p.proY} r={isLast ? 4.5 : 3.5} fill={isLast ? "#0E0E10" : "#FBFAF7"} stroke="#0E0E10" strokeWidth="2" />
                 {isLast && (
                   <g>
-                    <rect x={p.x - 31} y={p.y - 35} width="62" height="22" fill="#0E0E10" rx="11" />
-                    <text x={p.x} y={p.y - 20} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">750+</text>
+                    <rect x={p.x - 72} y={p.userY - 35} width="62" height="22" fill="#0E0E10" rx="11" />
+                    <text x={p.x - 41} y={p.userY - 20} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">750+</text>
+                    <rect x={p.x - 72} y={p.proY + 12} width="62" height="22" fill="#0E0E10" rx="11" />
+                    <text x={p.x - 41} y={p.proY + 27} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">250+</text>
                   </g>
                 )}
               </g>
@@ -146,7 +170,7 @@ const UserGrowthChart = () => {
       </div>
 
       <p className="mt-3 text-[11px] leading-[1.7] tracking-wide text-mute">
-        ※数値は2026年5月29日時点・自社集計です。個人情報は含めず、登録日時のみを集計しています。
+        ※数値は2026年5月29日時点・自社集計です。Proユーザー推移は、公開指標に合わせた概算推移として表示しています。
       </p>
     </div>
   );
