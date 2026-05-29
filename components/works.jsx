@@ -61,6 +61,9 @@ const Works = () => {
                 </div>
               ))}
             </div>
+            <p className="-mt-8 mb-12 text-[11px] leading-[1.8] tracking-wide text-mute">
+              ※数値は2026年5月時点・自社集計です。
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {data.map((w, i) => (
@@ -134,6 +137,7 @@ const Company = () => {
   const rows = [
     ["会社名", "DAIZU合同会社"],
     ["代表",   "佐々木 響介"],
+    ["設立",   "2024年9月"],
     ["所在地", "〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング619"],
     ["事業内容","配信演出SaaS「LiveSpark」の開発・運営\nTikTok LIVE向けカスタムオーバーレイ制作\n配信事務所運営 / ライバー支援\nギフトアニメーション / SNSクリエイティブ制作\nAI活用支援 / Web・LP制作"],
     ["Mail",   "sasaki@daizuinc.jp"],
@@ -246,7 +250,7 @@ const FinalCTA = () => (
             <p className="mt-5 text-[13.5px] leading-[2] text-ink2/85 max-w-[440px]">
               LiveSparkの導入相談、カスタムオーバーレイ制作、配信事務所・ライバー支援、ギフトアニメーション制作、ライバー事務所・関連企業様との提携相談まで、お気軽にご相談ください。
               <br/><br/>
-              企画段階のご相談から、導入方法の整理、制作・運用まで柔軟に対応します。
+              企画段階のご相談から、導入方法の整理、制作・運用、契約・請求まわりの事前確認まで柔軟に対応します。
             </p>
             <div className="mt-8 inline-flex items-center gap-3 text-[12.5px] text-gold2 tracking-wide">
               <span className="dot-gold"></span>
