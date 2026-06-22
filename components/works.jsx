@@ -35,6 +35,10 @@ const userGrowthData = [
   { period: "5/14", users: 386, proUsers: 129 },
   { period: "5/21", users: 536, proUsers: 179 },
   { period: "5/29", users: 750, proUsers: 250 },
+  { period: "6/5", users: 920, proUsers: 286 },
+  { period: "6/12", users: 1100, proUsers: 342 },
+  { period: "6/19", users: 1280, proUsers: 397 },
+  { period: "6/22", users: 1400, proUsers: 420 },
 ];
 
 const UserGrowthChart = () => {
@@ -53,14 +57,14 @@ const UserGrowthChart = () => {
   }, []);
 
   const chartData = isCompact
-    ? userGrowthData.filter((_, i) => [0, 2, 3, 5, 6].includes(i))
+    ? userGrowthData.filter((_, i) => [0, 2, 4, 6, 8, 10].includes(i))
     : userGrowthData;
   const width = isCompact ? 360 : 760;
   const height = isCompact ? 250 : 280;
   const pad = isCompact
     ? { top: 24, right: 18, bottom: 42, left: 42 }
     : { top: 24, right: 30, bottom: 46, left: 54 };
-  const maxUsers = 800;
+  const maxUsers = 1500;
   const plotW = width - pad.left - pad.right;
   const plotH = height - pad.top - pad.bottom;
   const baseY = pad.top + plotH;
@@ -73,7 +77,7 @@ const UserGrowthChart = () => {
   const userLinePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.userY}`).join(" ");
   const proLinePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.proY}`).join(" ");
   const areaPath = `${userLinePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`;
-  const yTicks = [0, 200, 400, 600, 800];
+  const yTicks = [0, 300, 600, 900, 1200, 1500];
 
   return (
     <div className="mb-14 border border-line bg-paper p-5 md:p-7">
@@ -90,13 +94,13 @@ const UserGrowthChart = () => {
         <div className="grid grid-cols-2 gap-5 text-left md:text-right shrink-0">
           <div>
             <div className="font-jp-serif font-semibold text-[32px] md:text-[42px] leading-none text-ink">
-              750<span className="text-[18px] md:text-[22px] text-gold">+</span>
+              1,400<span className="text-[18px] md:text-[22px] text-gold">+</span>
             </div>
             <div className="mt-1 text-[10.5px] tracking-[0.14em] text-gold2">REGISTERED</div>
           </div>
           <div>
             <div className="font-jp-serif font-semibold text-[32px] md:text-[42px] leading-none text-ink">
-              250<span className="text-[18px] md:text-[22px] text-gold">+</span>
+              420
             </div>
             <div className="mt-1 text-[10.5px] tracking-[0.14em] text-gold2">PRO USERS</div>
           </div>
@@ -154,10 +158,10 @@ const UserGrowthChart = () => {
                 <circle cx={p.x} cy={p.proY} r={isLast ? 4.5 : 3.5} fill={isLast ? "#0E0E10" : "#FBFAF7"} stroke="#0E0E10" strokeWidth="2" />
                 {isLast && (
                   <g>
-                    <rect x={p.x - 72} y={p.userY - 35} width="62" height="22" fill="#0E0E10" rx="11" />
-                    <text x={p.x - 41} y={p.userY - 20} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">750+</text>
-                    <rect x={p.x - 72} y={p.proY + 12} width="62" height="22" fill="#0E0E10" rx="11" />
-                    <text x={p.x - 41} y={p.proY + 27} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">250+</text>
+                    <rect x={p.x - 80} y={p.userY - 35} width="70" height="22" fill="#0E0E10" rx="11" />
+                    <text x={p.x - 45} y={p.userY - 20} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">1,400+</text>
+                    <rect x={p.x - 80} y={p.proY + 12} width="70" height="22" fill="#0E0E10" rx="11" />
+                    <text x={p.x - 45} y={p.proY + 27} textAnchor="middle" fill="#E6D5AE" fontSize="11" fontWeight="600">420</text>
                   </g>
                 )}
               </g>
@@ -170,7 +174,7 @@ const UserGrowthChart = () => {
       </div>
 
       <p className="mt-3 text-[11px] leading-[1.7] tracking-wide text-mute">
-        ※2026年5月29日時点・自社集計。Pro推移は公開指標に合わせた概算です。
+        ※2026年6月22日時点・自社集計。Pro推移は公開指標に合わせた概算です。
       </p>
     </div>
   );
@@ -194,8 +198,8 @@ const Works = () => {
             {/* numbers bar */}
             <div className="border-y border-line py-7 mb-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {[
-                { num: "750", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
-                { num: "250", suffix: "+", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
+                { num: "1,400", suffix: "+", label: "LiveSpark登録ユーザー", sub: "TikTok LIVE配信者を中心に利用拡大中", highlight: true },
+                { num: "420", suffix: "", label: "Proユーザー",           sub: "月額利用者が継続的に増加", highlight: true },
                 { num: "2",   suffix: "年", label: "配信事務所運営",         sub: "ライバー支援・配信現場で培った知見" },
                 { num: "50",  suffix: "+", label: "制作実績",               sub: "オーバーレイ・ギフトアニメーション・SNS素材など" },
                 { num: "3",   suffix: "",  label: "運用中アカウント",       sub: "SNS / 配信ノウハウを蓄積" },
@@ -211,7 +215,7 @@ const Works = () => {
               ))}
             </div>
             <p className="-mt-8 mb-12 text-[11px] leading-[1.8] tracking-wide text-mute">
-              ※数値は2026年5月時点・自社集計です。
+              ※数値は2026年6月22日時点・自社集計です。
             </p>
 
             <UserGrowthChart />
